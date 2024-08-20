@@ -16,7 +16,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - .:/data:ro
+      - pg_data:/bitnami/postgresql 
+      - ./db:/docker-entrypoint-initdb.d
     networks:
       - bdr-net
 
@@ -55,3 +56,6 @@ services:
       - traefik.http.routers.frontend.tls=true
     deploy:
       replicas: 1
+
+volumes:
+  pg_data:
