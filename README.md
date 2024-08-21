@@ -80,7 +80,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 - Le système doit pouvoir démarrer après une panne en moins de 5 minutes.
 - L'infrastructure complète sans l'application Docker doit faire moins de 5 Go.
 - Les clients doivent pouvoir utiliser l'application via n'importe quel navigateur web moderne depuis un ordinateur.
-- Il doit possible d'utiliser l'application depuis un navigateur de téléphone.
+- Il doit être possible d'utiliser l'application depuis un navigateur de téléphone.
 - Les mots de passe sont stockés dans la base de donnée sous forme de hash.
 - La page web doit utiliser une version sûre du protocole https pour garantir la confidentialité et l'authenticité des données.
 - Une protection contre le brute force est mise en place ainsi que contre les principales vulnérabilités connues (injection sql, timing attack, message d'erreur trop explicite, etc.).
