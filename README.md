@@ -80,7 +80,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 - Le système doit pouvoir démarrer après une panne en moins de 5 minutes.
 - L'infrastructure complète sans l'application Docker doit faire moins de 5 Go.
 - Les clients doivent pouvoir utiliser l'application via n'importe quel navigateur web moderne depuis un ordinateur.
-- Il doit possible d'utiliser l'application depuis un navigateur de téléphone.
+- Il doit être possible d'utiliser l'application depuis un navigateur de téléphone.
 - Les mots de passe sont stockés dans la base de donnée sous forme de hash.
 - La page web doit utiliser une version sûre du protocole https pour garantir la confidentialité et l'authenticité des données.
 - Une protection contre le brute force est mise en place ainsi que contre les principales vulnérabilités connues (injection sql, timing attack, message d'erreur trop explicite, etc.).
@@ -129,16 +129,45 @@ Nous avons choisi d'implémenter un reverse proxy afin de communiquer en http av
 
 ### Description du processus de travail
 
-Nous avons choisi **l'Extreme Programming** pour développer notre application parmi les méthodes Agiles. Nous avons choisi XP pour les raisons suivantes:
+Nous avons opté pour la méthode Extreme Programming (XP) afin de développer notre application, après avoir comparé diverses méthodes Agiles. Cette décision s'appuie sur les avantages spécifiques de XP, qui incluent :
 
-- Cycles de développement court
-- Tests automatisés
-- Planification progressive et flexible
+Des cycles de développement courts : Ils nous permettent de réagir rapidement aux besoins changeants et d'améliorer continuellement l'application.
+Des tests automatisés : Ces tests garantissent la fiabilité du code, réduisent les erreurs et accélèrent les cycles de développement.
+Une planification progressive et flexible : Cette approche nous donne la possibilité d'adapter facilement nos priorités selon l'évolution du projet.
 
 Nous avons décidé de mettre en place les pratiques suivantes pour nous aider dans le développement:
 
-- Programmer en paire
-- Cycle hebdomadaire
-- Build en 10 minutes
-- Intégration continue
-- Test-first programming
+#### Travail en pair programming
+
+Nous avons formé deux groupes de deux personnes, chacun travaillant en programmation en paire. Cela nous permet de répartir efficacement les tâches tout en ayant une responsabilité partagée entre 2 personnes.
+Chaque groupe se concentre sur un aspect spécifiques du projet.
+
+Régulièrement, nous organisons de "petites réunions" pour synchroniser nos avancées et discuter des potentiels problèmes rencontrés et/ou des questions à adresser aux assistants.
+Cela favorise une communication ouverte et permet un retour d'information continu.
+
+#### Tests avant le code (Test-First Programming)
+
+Nous appliquons le principe du **Test-First Programming**, qui consiste à écrire des tests avant de commencer l'implémentation des fonctionnalités afin de garantir que chaque fonctionnalité est validée et fonctionne comme pérvu avant d'être intégrée dans le projet.
+
+#### Répartition des tâches
+
+Après avoir imaginé notre projet et de toutes les fonctionnalités que nous souhaitons implémenter, une équipe s'est attardée sur la réalisation des mockups/landing page lorsque l'autre s'est occupé de la création de l'organisation Git ainsi que la mise en place de notre pipeline de développement.
+Nous avons ensuite décidé de rester sur une double équipe de deux pour la suite pour la réalisation du backend d'une part et du frontend de l'autre.
+Chaque équipe est responsable de son domaine tout en maintenant une cohérence entre les deux côtés de l'application.
+Cependant, il n'est pas impossible qu'une personne bascule et s'occupe du domaine de l'autre groupe et inversement.
+
+#### Structuration de notre travail
+
+Comme mentionné au point précèdent, nous avons créer une organisation pour ce projet et nous y avons ajouté plusieurs repos répartis de manière claire :
+
+- Infra
+- Backend
+- Frontend
+- github.io (Landing page)
+
+Cette organisation permet une séparation et une gestion plus facile sur les différents aspects du projet.
+
+##### Intégration continue et gestion des branches
+
+Tous nos ajouts et modification de code sont effectués sur des branches de développement (**dev**). Une fois que le travail sur une fonctionnalité (ou tâche) est terminé, nous effectuons un "merge request" pour intégrer ces nouveauté dans la branche **main**.
+Une autre personne doit ensuite consulter ce merge request et l'approuver afin que ces modification s'applique et que le pipeline s'occupe d'appliquer ces modifications automatiquement.
