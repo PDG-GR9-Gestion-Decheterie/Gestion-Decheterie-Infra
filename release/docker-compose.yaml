@@ -37,7 +37,7 @@ services:
   backend:
     image: justinferrara968/gestion-decheterie-backend:main
     labels:
-      - traefik.http.routers.backend.rule=Host(`localhost`) &&
+      - traefik.http.routers.backend.rule=Host(`{host:.*}`) &&
         PathPrefix(`/api`)
       - traefik.http.routers.backend.entrypoints=https
       - traefik.http.routers.backend.tls=true
@@ -51,7 +51,7 @@ services:
   frontend:
     image: justinferrara968/gestion-decheterie-frontend:main
     labels:
-      - traefik.http.routers.frontend.rule=Host(`localhost`)
+      - traefik.http.routers.frontend.rule=Host(`{host:.*}`)
       - traefik.http.routers.frontend.entrypoints=https
       - traefik.http.routers.frontend.tls=true
     deploy:
