@@ -8,7 +8,7 @@
 
 L'objectif de ce projet est de créer un système de base de données dédié à la gestion des déchèteries de Suisse.
 
-L'objectif principal est de fournir un outil qui simplifiera la gestion des déchèteries nationales. Cette base de données permettra de suivre de manière précise les informations essentielles.
+Le but principal est de fournir un outil qui simplifiera la gestion des déchèteries nationales. Cette base de données permettra un suivi précis des informations essentielles.
 
 Le projet vise à accroître l'efficacité opérationnelle des déchèteries en offrant un système centralisé pour la gestion du personnel, des équipements, et des flux de déchets. Il contribuera ainsi à une meilleure organisation des activités de collecte et de gestion des déchets, tout en facilitant la traçabilité.
 
