@@ -136,6 +136,8 @@ Nous avons choisi **Node.js** pour son efficacité à gérer plusieurs clients s
 
 Pour structurer notre application, nous utiliserons **Express.js**. Express.js simplifie la gestion des routes, des middlewares et des requêtes HTTP, permettant de créer des API RESTful de manière efficace et flexible. De plus il y a un grand nombre de plugins disponibles pour toutes sortes de fonctionnalités.
 
+Nous utiliserons **Passport** pour gérer les cookies pour l'authentification des utilisateurs. Lié à bCrypt, cela permet d'avoir une authentificaiton sûre avec un stockage des mots de passe sécurisé dans la base de données.
+
 #### Frontend
 
 Nous avons choisi **React** pour sa popularité lorsqu'il s'agit de développer des interfaces web modernes et pour que les utilisateurs puissent bénéficier d'une expérience fluide. Nous avons également choisi d'utiliser **MUI** afin de disposer de composants préfabriqués et d'une interface intuitive.
