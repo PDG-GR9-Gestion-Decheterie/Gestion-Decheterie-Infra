@@ -8,6 +8,7 @@ services:
   postgresql:
     image: "bitnami/postgresql:16"
     container_name: bdr-postgresql
+    restart: always
     environment:
       - POSTGRESQL_USERNAME=bdr
       - POSTGRESQL_PASSWORD=bdr
@@ -23,6 +24,7 @@ services:
 
   reverse_proxy:
     image: traefik
+    restart: always
     command:
       - --providers.docker
     volumes:
@@ -36,8 +38,9 @@ services:
 
   backend:
     image: justinferrara968/gestion-decheterie-backend:main
+    restart: always
     labels:
-      - traefik.http.routers.backend.rule=Host(`{host:.*}`) &&
+      - traefik.http.routers.backend.rule=Host(`gestion-decheterie.internet-box.ch`) &&
         PathPrefix(`/api`)
       - traefik.http.routers.backend.entrypoints=https
       - traefik.http.routers.backend.tls=true
@@ -50,8 +53,9 @@ services:
 
   frontend:
     image: justinferrara968/gestion-decheterie-frontend:main
+    restart: always
     labels:
-      - traefik.http.routers.frontend.rule=Host(`{host:.*}`)
+      - traefik.http.routers.frontend.rule=Host(`gestion-decheterie.internet-box.ch`)
       - traefik.http.routers.frontend.entrypoints=https
       - traefik.http.routers.frontend.tls=true
     deploy:
