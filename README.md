@@ -32,7 +32,7 @@ Les contenants sont soit des bennes, des palettes, des grandes caisses ou des bi
 - Les big bag ont une taille : petite, moyenne ou grande.
 - Les palettes possèdent un nombre de cadres (entre 0 et 4).
 
-Les moyens de transport sont soit des camions, soit des camionnettes avec ou sans remorque et possèdent un numéro d’immatriculation, année de fabrication, date de la dernière expertise ainsi qu’une consommation de carburant.
+Les moyens de transport sont soit des camions, soit des camionnettes et possèdent un numéro d’immatriculation, année de fabrication, date de la dernière expertise, une consommation de carburant ainsi qu'une indication avec ou sans remorque.
 
 - Le camion peut seulement transporter des bennes
 - La camionnette peut transporter tous les autres types de contenant (palettes, grandes caisses et big bag).
@@ -66,6 +66,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 - Un responsable ou un secrétaire peut modifier, ajouter ou supprimer sans restriction des ramassages. Y attribuer un chauffeur, accepter ou refuser un ramassage, y renseigner le poids, etc.
 - Un responsable peut consulter toutes les information concernant les employés sauf leur mot de passe.
 - Un secrétaire ou un chauffeur ne peut que travailler pour une déchèterie principale.
+- Seul un secrétaire ou responsable peut ajouter/modifier/supprimer/accéder à la table véhicule et la table contenant.
 
 ##### Besoins fonctionnels - Connexion
 
@@ -76,7 +77,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 
 - Un employé sans connaissance en informatique doit pouvoir prendre en main l’application en moins de 20 minutes avec l'aide d'une formation ou d'un mode d'emploi.
 - Le système sera disponible 24 heures sur 24, avec un taux d'indisponibilité n'exédant pas 5 minutes par jour.
-- Le système doit pouvoir gérer 20 utilisateurs à la fois, avec un temps de réponse inférieur à 500 ms.
+- Le système doit pouvoir gérer 1000 requêtes par seconde avec 90% du temps de réponse inférieure à 500ms.
 - Le système doit pouvoir démarrer après une panne en moins de 5 minutes.
 - L'infrastructure complète sans l'application Docker doit faire moins de 5 Go.
 - Les clients doivent pouvoir utiliser l'application via n'importe quel navigateur web moderne depuis un ordinateur.
@@ -88,6 +89,8 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 ### Description préliminaire de l’architecture
 
 Notre architecture est composée de 4 conteneurs **Docker**, le tout orchestré par un **Docker compose**.
+Nous utiliserons un PC fixe comme serveur que nous ferons tourner à la maison. Ce serveur nous permettra de déployer notre application et faire tourner notre infrastructure.
+Le serveur utilisera comme OS **ubuntu server** avec docker installé.
 
 #### Backend
 
@@ -124,6 +127,7 @@ Ajout de Ramassage: L'utilisateur peut remplir un formulaire pour ajouter un nou
 ![Mockup](img/Mockup_schema.png "schéma mockup")
 
 Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheterie.github.io/) que vous pouvez aller consulter à l'url suivante : https://pdg-gr9-gestion-decheterie.github.io
+
 ### Description des choix techniques
 
 #### Backend
@@ -143,6 +147,7 @@ Nous avons choisi **PostgreSQL** parce que c'est un SGBD open source reconnu pou
 #### Reverse proxy
 
 Nous avons choisi d'implémenter un reverse proxy afin de communiquer en http avec le serveur backend et le serveur frontend et de gérer la connexion ssl en un seul point. De plus, il permet de faire du load balancing avec sticky session et de rediriger certaines url sur un conteneur spécifique (/api).
+Il permet également de gérer plusieurs nom de domaine différents sur la même adresse IP publique.
 
 ### Description du processus de travail
 
@@ -188,3 +193,4 @@ Cette organisation permet une séparation et une gestion plus facile sur les dif
 
 Tous nos ajouts et modification de code sont effectués sur des branches de développement (**dev**). Une fois que le travail sur une fonctionnalité (ou tâche) est terminé, nous effectuons un "merge request" pour intégrer ces nouveauté dans la branche **main**.
 Une autre personne doit ensuite consulter ce merge request et l'approuver afin que ces modification s'applique et que le pipeline s'occupe d'appliquer ces modifications automatiquement.
+
