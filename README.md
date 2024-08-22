@@ -54,14 +54,23 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 
 ##### Besoins fonctionnels - Roles
 
-- Un employé à la capacité de faire une demande de ramassage, d’un type de déchet donné, à la déchèterie principale qui doit accepter ou refuser. Si acceptée, la déchèterie principale pourra ensuite affecter un chauffeur ainsi qu’un véhicule.
-- Les employés d’une déchèterie pourront consulter tous les ramassages présent et futur prévus.
-- Les employés peuvent consulter leur profil avec leur information leur concernant.
-- Le responsable, lui, aura accès à tout l’historique des ramassages passés, présents, futurs.
-- Un responsable ou un secrétaire peut modifier, ajouter ou supprimer sans restriction des ramassages. Y attribuer un chauffeur, accepter ou refuser un ramassage, y renseigner le poids, etc.
-- Un responsable peut consulter toutes les information concernant les employés sauf leur mot de passe.
-- Un secrétaire ou un chauffeur ne peut que travailler pour une déchèterie principale.
-- Seul un secrétaire ou responsable peut ajouter/modifier/supprimer/accéder à la table véhicule et la table contenant.
+| Rôle            | Tables           | Lecture                            | Ajout                               | Modification                       | Suppression                        |
+|-----------------|------------------|------------------------------------|-------------------------------------|------------------------------------|------------------------------------|
+| **Employé + Chauffeur** | Ramassages       | ✅ Présents et futurs      | ✅                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
+|                 | Véhicules        | ❌                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Contenants       | ❌                                 | ❌                                 | ❌                                 | ❌                                 |
+| **Secrétaire**  | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Employé          | ❌                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+| **Responsable** | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Employés         | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+
+- Un secrétaire, un chauffeur ou un responsable ne peut que travailler pour une déchèterie principale.
+- Toutes les informations doivent être uniquement disponible pour les employé de la même déchèterie principale. Par exemple il est impossible de voir les ramassage d'une autre déchèterie principale.
 
 ##### Besoins fonctionnels - Connexion
 
