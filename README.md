@@ -18,24 +18,19 @@ Le projet vise à accroître l'efficacité opérationnelle des déchèteries en 
 
 Chaque déchèterie possède des contenants, des employés, une adresse et des ramassages qui ont été/seront effectués dans celle-ci.
 
-- Un employé possède un nom, prénom, une date de naissance, un numéro de téléphone, une adresse, date de début contrat, une fonction, un supérieur. Chaque employé est affecté à une déchèterie et possède un login pour se connecter à l’application.
+- Un employé possède un nom, prénom, une date de naissance, un numéro de téléphone, une adresse, date de début contrat, une fonction, un supérieur et un type de permis (B, C) (pas obligatoirement). Chaque employé est affecté à une déchèterie et possède un login pour se connecter à l’application.
 - Une adresse est décrite par une rue et numéro, un code postal, une ville et un pays
 - Il y a comme fonction : Responsable, Secrétaire, Chauffeur, Employé.
-- Si sa fonction est chauffeur, nous pouvons connaître son type de permis (B, C).
 
 Une déchèterie principale en plus d’avoir les mêmes attributs qu’une déchèterie possède des moyens de transport des déchets (véhicules).
 
 Les contenants sont soit des bennes, des palettes, des grandes caisses ou des big bag et possède un type de déchets contenu.
 
-- Les bennes et les grandes caisses possèdent une capacité maximale (en litre).
-- Les bennes possèdent une couleur
+- Les bennes, les grandes caisses, les big bag et les palettes on une couleur et une capactié maximale (en litre).
 - Les big bag ont une taille : petite, moyenne ou grande.
 - Les palettes possèdent un nombre de cadres (entre 0 et 4).
 
-Les moyens de transport sont soit des camions, soit des camionnettes et possèdent un numéro d’immatriculation, année de fabrication, date de la dernière expertise, une consommation de carburant ainsi qu'une indication avec ou sans remorque.
-
-- Le camion peut seulement transporter des bennes
-- La camionnette peut transporter tous les autres types de contenant (palettes, grandes caisses et big bag).
+Les moyens de transport sont soit des camions, soit des camionnettes et possèdent un numéro d’immatriculation, année de fabrication, date de la dernière expertise, une consommation de carburant ainsi qu'une indication avec ou sans remorque. Les camions et la camionette peuvent transporter tous types de contenants.
 
 Les différents types de déchets possibles sont :
 
