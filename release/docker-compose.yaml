@@ -49,6 +49,8 @@ services:
       - traefik.http.services.backend.loadbalancer.sticky.cookie.samesite=strict
     deploy:
       replicas: 1
+    environment:
+      - BACKEND_APP_API_URL=https://gestion-decheterie.internet-box.ch
 
   frontend:
     image: justinferrara968/gestion-decheterie-frontend:main
