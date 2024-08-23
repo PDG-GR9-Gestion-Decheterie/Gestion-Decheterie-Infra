@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" modified="2024-08-22T11:53:10.723Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="qU0qXHXweVyjd-80txve" version="24.0.7" type="device">
+  <diagram name="Page-1" id="46j3LoL-nUiG1EuYUXwf">
+    <mxGraphModel dx="1434" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-1" target="EORlcrbRCVAnT8R5fg5p-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-5" value="push" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EORlcrbRCVAnT8R5fg5p-4">
+          <mxGeometry x="0.1889" y="-2" relative="1" as="geometry">
+            <mxPoint x="-17" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-1" value="Développeur" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="79.6" y="250" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-3" value="Branche dev" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.git_repository;" vertex="1" parent="1">
+          <mxGeometry x="289.6" y="241" width="60" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-6" target="EORlcrbRCVAnT8R5fg5p-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="553.6" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-6" value="Exécution des tests sur Github (workflow)" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Load_Test.svg;" vertex="1" parent="1">
+          <mxGeometry x="519.6" y="247" width="68" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.074;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-3" target="EORlcrbRCVAnT8R5fg5p-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-8" value="CI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EORlcrbRCVAnT8R5fg5p-7">
+          <mxGeometry x="-0.1392" relative="1" as="geometry">
+            <mxPoint x="9" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-9" target="EORlcrbRCVAnT8R5fg5p-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-17" value="Publication de l&#39;image" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EORlcrbRCVAnT8R5fg5p-16">
+          <mxGeometry x="0.013" y="1" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-9" value="Branche main" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.git_repository;" vertex="1" parent="1">
+          <mxGeometry x="523.6" y="440" width="60" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="559.6" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-14" value="Review et merge" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EORlcrbRCVAnT8R5fg5p-13">
+          <mxGeometry x="0.1524" y="-1" relative="1" as="geometry">
+            <mxPoint x="24" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-10" value="Développeur" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="739.6" y="350" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-15" value="Docker Hub" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="136.6" y="439" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="196.5999999999999" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-18" value="Serveur client 2" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
+          <mxGeometry x="175.29999999999998" y="620" width="42.599999999999994" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-20" value="Serveur client 1" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
+          <mxGeometry x="57" y="620" width="42.599999999999994" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-21" value="Serveur client 3" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
+          <mxGeometry x="307" y="620" width="42.599999999999994" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.778;entryY=0.925;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-21" target="EORlcrbRCVAnT8R5fg5p-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EORlcrbRCVAnT8R5fg5p-24" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.245;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="EORlcrbRCVAnT8R5fg5p-20" target="EORlcrbRCVAnT8R5fg5p-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
