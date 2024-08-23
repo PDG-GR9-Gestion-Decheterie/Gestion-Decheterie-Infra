@@ -205,11 +205,11 @@ FROM secretaire_decheterie_ramassage
 BEGIN;
 -- Insert data into the 'adresse' table
 INSERT INTO adresse (id, rue, numero, NPA, nomVille, pays) VALUES
-(1, 'Chemin du petit pas', '10', '1400', 'Yverdon-les-Bains', 'Suisse'),
+(1, 'Chemin du petit pas', '10', '1400', 'Yverdon-les-Bains', 'Suisse');
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES
-(1, 'Decheterie Yverdon', 1),
+(1, 'Decheterie Yverdon', 1);
 
 -- Insert data into the 'principale' table
 
@@ -222,7 +222,7 @@ INSERT INTO fonction (nom) VALUES
 
 -- Insert data into the 'employe' table Responsable, Secrétaire, Chauffeur, Employé de déchèterie
 INSERT INTO employe (idLogin, mdpLogin, nom, prenom, dateNaissance, dateDebutContrat, numTelephone, typePermis, FK_adresse,fk_decheterie, fk_fonction) VALUES
-('admin', '$2b$10$dUAAdaUJmov5Asrbi.Iho.ChbwPSEZFLlqsHSLHTJ1mKGadHXc20O', 'Doe', 'John', '1980-01-01', '2020-01-01', NULL, NULL, 1, 1, 'Responsable'),
+('admin', '$2b$10$Db1QVQd2CD.TL47zEZBxSezC.ThYe23b5hBiyUntBBsrgvb6QTkk2', 'name', 'surname', '1980-01-01', '2020-01-01', NULL, NULL, 1, 1, 'Responsable');
 
 -- Insert data into the 'vehicule' table
 
@@ -242,6 +242,6 @@ INSERT INTO status (nom) VALUES
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
-('jdoe', 'jdoe'),
+('admin', 'admin');
 
 COMMIT ;
