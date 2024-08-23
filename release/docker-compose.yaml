@@ -20,6 +20,11 @@ services:
       - ./db:/docker-entrypoint-initdb.d
     networks:
       - bdr-net
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "bdr"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   reverse_proxy:
     image: traefik
@@ -51,6 +56,9 @@ services:
       replicas: 1
     environment:
       - BACKEND_APP_API_URL=https://gestion-decheterie.internet-box.ch
+    depends_on:
+      postgresql:
+        condition: service_healthy
 
   frontend:
     image: justinferrara968/gestion-decheterie-frontend:main
