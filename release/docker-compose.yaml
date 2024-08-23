@@ -59,6 +59,8 @@ services:
       - traefik.http.routers.frontend.tls=true
     deploy:
       replicas: 1
+    environment:
+      - REACT_APP_API_URL=https://gestion-decheterie.internet-box.ch
 
 volumes:
   pg_data:

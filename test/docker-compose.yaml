@@ -48,6 +48,8 @@ services:
       - traefik.http.services.backend.loadbalancer.sticky.cookie.samesite=strict
     deploy:
       replicas: 1
+    environment:
+      - REACT_APP_API_URL=http://api.example.com
 
   frontend:
     build:
