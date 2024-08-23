@@ -266,18 +266,18 @@ INSERT INTO employe (idLogin, mdpLogin, nom, prenom, dateNaissance, dateDebutCon
 
 -- Insert data into the 'vehicule' table
 INSERT INTO vehicule (immatriculation, type, remorque, anneeFabrication, dateExpertise, consoCarburant, FK_decheterie) VALUES
-('VD 850 154', 'camion', FALSE, '2010', '2022-01-01', 10.5, 1),
-('VD 145 154', 'camionnette', FALSE, '2015', '2022-01-01', 7.5, 1),
-('VD 756 254', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VD 896 654', 'camionnette', TRUE, '2016', '2022-01-01', 8.5, 1),
-('VD 857 154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VD 568 154', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 1),
-('VD 147 154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VS 568 745', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5),
-('VS 352 125', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
-('VS 255 145', 'camionnette', FALSE, '2018', '2022-07-30', 8.5, 5),
-('VS 458 569', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
-('VS 987 865', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5);
+('VD850154', 'camion', FALSE, '2010', '2022-01-01', 10.5, 1),
+('VD145154', 'camionnette', FALSE, '2015', '2022-01-01', 7.5, 1),
+('VD756254', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VD896654', 'camionnette', TRUE, '2016', '2022-01-01', 8.5, 1),
+('VD857154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VD568154', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 1),
+('VD147154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VS568745', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5),
+('VS352125', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
+('VS255145', 'camionnette', FALSE, '2018', '2022-07-30', 8.5, 5),
+('VS458569', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
+('VS987865', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5);
 
 
 -- Insert data into the 'dechet' table
