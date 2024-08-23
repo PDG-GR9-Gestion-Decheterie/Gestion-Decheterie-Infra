@@ -150,55 +150,6 @@ ADD CONSTRAINT fk_superviseur_employee
 ADD CONSTRAINT fk_superviseur_superviseur
     FOREIGN KEY (FK_superviseur) REFERENCES employe(idLogin) ON DELETE CASCADE;
 
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------
--- VUES
-------------------------------------------------------------------------------------------------------------------------
-
------------------------------------------------------------
--- Une déchèterie principale a une vue sur ses déchèteries gérées
-CREATE OR REPLACE VIEW decheterie_principale AS
-SELECT p.FK_principale AS decheterie_principale_id, d1.nom AS decheterie_principale_nom,
-       d2.id AS decheterie_id, d2.nom AS nom_decheterie
-FROM principale p
-JOIN decheterie d1 ON d1.id = p.FK_principale
-JOIN decheterie d2 ON d2.id = p.FK_decheterie;
-
------------------------------------------------------------
--- Une secretaire d'une déchèterie a une vue sur TOUS les ramassages passé/présent/future de sa déchèterie
--- ET de tous les employés de sa déchèterie
-CREATE OR REPLACE VIEW secretaire_decheterie_employe AS
-SELECT d.id AS id_decheterie, d.nom AS nom_decheterie,
-       e.idlogin AS id_employe, e.nom AS nom_employe, e.prenom AS prenom_employe, e.FK_fonction AS fonction_employe,
-       e.datenaissance AS date_naissance, e.datedebutcontrat AS date_debut_contrat, e.numtelephone AS numero_telephone,
-       e.typepermis AS type_permis
-
-    FROM employe e
-    JOIN decheterie d ON d.id = e.fk_decheterie;
-
-CREATE OR REPLACE VIEW secretaire_decheterie_ramassage AS
-SELECT r.id AS id_ramassage, r.date AS date_ramassage,
-       d.id AS id_decheterie, d.nom AS nom_decheterie, r.fk_status AS status_ramassage,ed.idlogin AS id_employe,
-       ed.nom AS nom_employe, ed.prenom AS prenom_employe, c.id AS id_contenant, c.nom AS nom_contenant,
-       r.poids AS poids, c.taille AS taille_contenant, c.nbCadre AS nbCadre_contenant, v.type AS type_vehicule,
-       v.immatriculation AS immatriculation_vehicule
-    FROM decheterie d
-    JOIN ramassage r ON r.FK_decheterie = d.id
-    JOIN contenant c ON c.id = r.FK_contenant
-    JOIN vehicule v ON v.immatriculation = r.FK_vehicule
-    JOIN employe ed ON ed.idlogin = r.FK_employee;
-
------------------------------------------------------------
--- Un employé d'une déchèterie a une vue sur ses ramassages présent/futur
-CREATE OR REPLACE VIEW employe_decheterie AS
-SELECT *
-FROM secretaire_decheterie_ramassage
-    WHERE date_ramassage >= CURRENT_DATE;
-
-
 ------------------------------------------------------------------------------------------------------------------------
 -- Insertion des données
 ------------------------------------------------------------------------------------------------------------------------
@@ -266,18 +217,18 @@ INSERT INTO employe (idLogin, mdpLogin, nom, prenom, dateNaissance, dateDebutCon
 
 -- Insert data into the 'vehicule' table
 INSERT INTO vehicule (immatriculation, type, remorque, anneeFabrication, dateExpertise, consoCarburant, FK_decheterie) VALUES
-('VD 850 154', 'camion', FALSE, '2010', '2022-01-01', 10.5, 1),
-('VD 145 154', 'camionnette', FALSE, '2015', '2022-01-01', 7.5, 1),
-('VD 756 254', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VD 896 654', 'camionnette', TRUE, '2016', '2022-01-01', 8.5, 1),
-('VD 857 154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VD 568 154', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 1),
-('VD 147 154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
-('VS 568 745', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5),
-('VS 352 125', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
-('VS 255 145', 'camionnette', FALSE, '2018', '2022-07-30', 8.5, 5),
-('VS 458 569', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
-('VS 987 865', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5);
+('VD850154', 'camion', FALSE, '2010', '2022-01-01', 10.5, 1),
+('VD145154', 'camionnette', FALSE, '2015', '2022-01-01', 7.5, 1),
+('VD756254', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VD896654', 'camionnette', TRUE, '2016', '2022-01-01', 8.5, 1),
+('VD857154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VD568154', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 1),
+('VD147154', 'camion', FALSE, '2011', '2022-01-01', 11.5, 1),
+('VS568745', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5),
+('VS352125', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
+('VS255145', 'camionnette', FALSE, '2018', '2022-07-30', 8.5, 5),
+('VS458569', 'camion', FALSE, '2011', '2022-01-01', 11.5, 5),
+('VS987865', 'camionnette', TRUE, '2018', '2022-07-30', 8.5, 5);
 
 
 -- Insert data into the 'dechet' table
