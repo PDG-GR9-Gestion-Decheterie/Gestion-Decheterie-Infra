@@ -1,8 +1,4 @@
 
-networks:
-  bdr-net:
-    driver: bridge
-
 services:
   postgresql:
     image: "bitnami/postgresql:16"
@@ -17,8 +13,6 @@ services:
     volumes:
       - pg_data:/bitnami/postgresql 
       - ./db:/docker-entrypoint-initdb.d
-    networks:
-      - bdr-net
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "bdr"]
       interval: 10s
