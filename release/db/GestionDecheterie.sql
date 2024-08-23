@@ -242,6 +242,6 @@ INSERT INTO status (nom) VALUES
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
-('jdoe', 'jdoe'),
+('admin', 'admin'),
 
 COMMIT ;
