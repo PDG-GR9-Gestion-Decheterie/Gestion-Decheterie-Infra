@@ -50,6 +50,7 @@ services:
       replicas: 1
     environment:
       - BACKEND_APP_API_URL=https://gestion-decheterie.internet-box.ch
+      - DATABASE_URL=postgres://bdr:bdr@postgresql:5432/bdr
     depends_on:
       postgresql:
         condition: service_healthy
