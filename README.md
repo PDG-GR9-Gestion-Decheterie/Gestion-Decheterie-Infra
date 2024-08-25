@@ -93,8 +93,6 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 ### Description préliminaire de l’architecture
 
 Notre architecture est composée de 4 conteneurs **Docker**, le tout orchestré par un **Docker compose**.
-Nous utiliserons un PC fixe comme serveur que nous ferons tourner à la maison. Ce serveur nous permettra de déployer notre application et faire tourner notre infrastructure.
-Le serveur utilisera comme OS **ubuntu server** avec docker installé.
 
 #### Backend
 
@@ -111,6 +109,10 @@ La base de données est une base de données **PostgreSQL** avec un script d'ini
 #### Reverse proxy
 
 Le reverse proxy utilise **Traefik** et permet au backend et au frontend d'être accessibles via le même port tout en répartissant les différentes requêtes au bon conteneur.
+
+#### Environnement de deploiment
+
+Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la maison. Ce serveur nous permettra de déployer notre application et faire tourner notre infrastructure. Le serveur utilisera comme OS **ubuntu server** avec docker installé.
 
 ### Mockups / Landing page
 
@@ -158,6 +160,10 @@ Nous avons choisi **PostgreSQL** parce que c'est un SGBD open source reconnu pou
 Nous avons choisi d'implémenter un reverse proxy afin de communiquer en http avec le serveur backend et le serveur frontend et de gérer la connexion ssl en un seul point. De plus, il permet de faire du load balancing avec sticky session et de rediriger certaines url sur un conteneur spécifique (/api).
 Il permet également de gérer plusieurs nom de domaine différents sur la même adresse IP publique.
 
+#### Environnement de deploiment
+
+Nous avons choisi la solution d'héberger notre propre infrastrucure car cette solution est gratuite, garanti la sécurité des données et nous permet de vendre notre solution clé en main à héberger directement chez le client. De cette manière nous pouvons mettre en avant la sécurité et la confidentialité des données avec notre solution.
+
 ### Description du processus de travail
 
 Nous avons opté pour la méthode Extreme Programming (XP) afin de développer notre application, après avoir comparé diverses méthodes Agiles. Cette décision s'appuie sur les avantages spécifiques de XP, qui incluent :
@@ -203,3 +209,10 @@ Cette organisation permet une séparation et une gestion plus facile sur les dif
 Tous nos ajouts et modification de code sont effectués sur des branches de développement (**dev**). Une fois que le travail sur une fonctionnalité (ou tâche) est terminé, nous effectuons un "merge request" pour intégrer ces nouveauté dans la branche **main**.
 Une autre personne doit ensuite consulter ce merge request et l'approuver afin que ces modification s'applique et que le pipeline s'occupe d'appliquer ces modifications automatiquement.
 
+###### Pipeline
+
+Le Pipeline constsite en scripts github actions qui monitorent les pushs sur la branche **main** sur le repository du **backend** et **frontend**. Quand une modification est faite sur une de ces branches, une image docker est automatiquement construite et push sur **Docker Hub** pour être accessible à l'environnement de deploiment. Le server de deploiment n'a plus qu'à faire pull les dernières images avec la commande `docker compose pull` et relancer le docker compose.
+
+###### Tests
+
+Des tests automatiques sont également efféctués sur le repository **backend** à chaque push. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
