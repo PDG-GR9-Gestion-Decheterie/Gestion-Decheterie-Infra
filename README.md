@@ -78,7 +78,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 - Le système sera disponible 24 heures sur 24, avec un taux d'indisponibilité n'exédant pas 5 minutes par jour.
 - Le système doit pouvoir gérer 20 utilisateurs à la fois, avec un temps de réponse inférieur à 500 ms.
 - Le système doit pouvoir démarrer après une panne en moins de 5 minutes.
-- L'infrastructure complète sans l'application Docker doit faire moins de 5 Go.
+- L'application complète sans l'application Docker doit faire moins de 5 Go.
 - Les clients doivent pouvoir utiliser l'application via n'importe quel navigateur web moderne depuis un ordinateur.
 - Il doit possible d'utiliser l'application depuis un navigateur de téléphone.
 - Les mots de passe sont stockés dans la base de donnée sous forme de hash.
