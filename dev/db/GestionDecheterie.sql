@@ -347,11 +347,11 @@ INSERT INTO contenant (id, nom, capaciteMax, nbCadre, taille, couleur, FK_dechet
 
 -- Insert data into the 'ramassage' table
 INSERT INTO ramassage (id, date, fk_status, poids, FK_contenant, FK_employee, FK_decheterie, FK_vehicule) VALUES
-(1, '2022-01-01', 'accepté', 100, 1, 'rsmith2', 1, 'VD 756 254'),
-(2, '2022-01-02', 'refusé', 55, 28, 'rfournier', 2, 'VD 145 154'),
-(3, '2022-03-06', 'accepté', 89, 59, 'rsmith2', 4, 'VD 568 154'),
-(4, '2028-05-05', 'en attente', 25, 67, 'bleusly', 5, 'VS 458 569'),
-(5, '2028-05-05', 'refusé', 66, 84, 'lchevalier', 6, 'VS 987 865');
+(1, '2022-01-01', 'accepté', 100, 1, 'rsmith2', 1, 'VD756254'),
+(2, '2022-01-02', 'refusé', 55, 28, 'rfournier', 2, 'VD145154'),
+(3, '2022-03-06', 'accepté', 89, 59, 'rsmith2', 4, 'VD568154'),
+(4, '2028-05-05', 'en attente', 25, 67, 'bleusly', 5, 'VS458569'),
+(5, '2028-05-05', 'refusé', 66, 84, 'lchevalier', 6, 'VS987865');
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
