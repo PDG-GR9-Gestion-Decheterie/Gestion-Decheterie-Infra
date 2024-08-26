@@ -161,7 +161,7 @@ INSERT INTO adresse (id, rue, numero, NPA, nomVille, pays) VALUES
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES
-(1, 'Decheterie Yverdon', 1);
+(1, 'Decheterie Yverdon', 1),
 (2, 'Decheterie Berne', 2);
 
 -- Insert data into the 'principale' table
@@ -208,22 +208,18 @@ INSERT INTO contenant (id, nom, capaciteMax, nbCadre, taille, couleur, FK_dechet
 
 -- Insert data into the 'ramassage' table
 INSERT INTO ramassage (id, date, fk_status, poids, FK_contenant, FK_employee, FK_decheterie, FK_vehicule) VALUES
-(1, '2022-01-01', 'accepté', 100, 1, 'rsmith2', 1, 'VD 756 254'),
+(1, '2022-01-01', 'accepté', 100, 1, 'Chauff1', 1, 'VD100000'),
+(2, '2022-01-01', 'accepté', 100, 1, 'Chauff2', 1, 'VD200000');
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
-('jdoe', 'jdoe'),
-('rfournier', 'jdoe'),
-('rsmith2', 'jdoe'),
-('asmith', 'jdoe'),
-('agraf', 'agraf'),
-('bleusly', 'agraf'),
-('lchevalier', 'agraf'),
-('rsmith', 'agraf'),
-('jdoe3', 'agraf'),
-('jdoe2', 'jdoe2'),
-('jmartin', 'jmartin'),
-('jdurand', 'jdurand'),
-('hlopez', 'hlopez'),
-('rlandry', 'hlopez');
-COMMIT ;
+('Resp1', 'Resp1'),
+('Secr1', 'Resp1'),
+('Empl1', 'Resp1'),
+('Chauff1', 'Resp1'),
+('Resp2', 'Resp2'),
+('Secr2', 'Resp2'),
+('Empl2', 'Resp2'),
+('Chauff2', 'Resp2');
+
+COMMIT;
