@@ -165,6 +165,9 @@ INSERT INTO decheterie (id, nom, FK_adresse) VALUES
 (2, 'Decheterie Berne', 2);
 
 -- Insert data into the 'principale' table
+INSERT INTO principale (FK_principale, FK_decheterie) VALUES
+(1, 1),
+(2, 2);
 
 -- Insert data into the 'fonction' table
 INSERT INTO fonction (nom) VALUES
@@ -177,11 +180,11 @@ INSERT INTO fonction (nom) VALUES
 INSERT INTO employe (idLogin, mdpLogin, nom, prenom, dateNaissance, dateDebutContrat, numTelephone, typePermis, FK_adresse,fk_decheterie, fk_fonction) VALUES
 ('Resp1', '$2b$10$I/9fLnf2NFR1eRd7IjVa7O5FjuqWoyYlmKzpqM86X7fk.zmfu5z5C', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', NULL, NULL, 1, 1, 'Responsable'),
 ('Secr1', '$2b$10$rAckvfy0rTT3zmA4OvRrs.aWcJwAGNSNwoeQ.IGTMxsRp/jPCSOiG', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', NULL, 1, 1, 'Secrétaire'),
-('Empl1', '$2b$10$.DbDMnSl/gRsoW27UgbK8euqpOxdhMsJVaYS803HRnsgy1BRnerqu', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', NULL, 1, 1, 'Employé'),
+('Empl1', '$2b$10$.DbDMnSl/gRsoW27UgbK8euqpOxdhMsJVaYS803HRnsgy1BRnerqu', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', 'B', 1, 1, 'Employé'),
 ('Chauff1', '$2b$10$C5NsJXrXsc2FOy/YBGniz.MbhgrQJQnKjAPcz.QrIvwdPbYCexzuC', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', NULL, 'C', 1, 1, 'Chauffeur'),
 ('Resp2', '$2b$10$wFCDg.Y6qfUJ1tArWOo4xuCMx89oLZ83BnWfX.htQ9PmlzK279H6G', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', NULL, 2, 2, 'Responsable'),
 ('Secr2', '$2b$10$oWhiI6le5pI3mX1ON69DIePIR.r1cmp4MMcuyn3lavs1NGqOhAxce', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', NULL, 2, 2, 'Secrétaire'),
-('Empl2', '$2b$10$ZBz2LfuMGioA9pRfj5hwi.fHrPp7K9SwBZSLIOrIzc8jDSRQUD/b6', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', NULL, 2, 2, 'Employé'),
+('Empl2', '$2b$10$ZBz2LfuMGioA9pRfj5hwi.fHrPp7K9SwBZSLIOrIzc8jDSRQUD/b6', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', 'B', 2, 2, 'Employé'),
 ('Chauff2', '$2b$10$qpU/j70xZHWaxAqdkLuSmudKYoXzm.kHhyBEitDlrbh3opRGgp3/i', 'Nom', 'Prenom', '2000-01-01', '2020-01-01', '0123456789', 'C', 2, 2, 'Chauffeur');
 
 -- Insert data into the 'vehicule' table
@@ -209,7 +212,7 @@ INSERT INTO contenant (id, nom, capaciteMax, nbCadre, taille, couleur, FK_dechet
 -- Insert data into the 'ramassage' table
 INSERT INTO ramassage (id, date, fk_status, poids, FK_contenant, FK_employee, FK_decheterie, FK_vehicule) VALUES
 (1, '2022-01-01', 'accepté', 100, 1, 'Chauff1', 1, 'VD100000'),
-(2, '2022-01-01', 'accepté', 100, 1, 'Chauff2', 1, 'VD200000');
+(2, '2022-01-01', 'accepté', 100, 1, 'Chauff2', 2, 'VD200000');
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
