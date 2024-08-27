@@ -50,6 +50,7 @@ services:
     environment:
       - BACKEND_APP_API_URL=https://localhost
       - DATABASE_URL=postgres://bdr:bdr@postgresql:5432/bdr
+      - SEQUELIZE_LOGS=true
     depends_on:
       postgresql:
         condition: service_healthy

@@ -212,7 +212,7 @@ INSERT INTO contenant (id, nom, capaciteMax, nbCadre, taille, couleur, FK_dechet
 -- Insert data into the 'ramassage' table
 INSERT INTO ramassage (id, date, fk_status, poids, FK_contenant, FK_employee, FK_decheterie, FK_vehicule) VALUES
 (1, '2022-01-01', 'accepté', 100, 1, 'Chauff1', 1, 'VD100000'),
-(2, '2022-01-01', 'accepté', 100, 1, 'Chauff2', 2, 'VD200000');
+(2, '2022-01-01', 'accepté', 100, 2, 'Chauff2', 2, 'VD200000');
 
 -- Insert data into the 'superviseur' table
 INSERT INTO superviseur (FK_employee, FK_superviseur) VALUES
