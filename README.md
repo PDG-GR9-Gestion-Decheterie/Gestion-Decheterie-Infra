@@ -62,18 +62,27 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 |                 | Contenants       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Adresse          | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Status           | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 | **Secrétaire**  | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Adresse          | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Status           | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 | **Responsable** | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Employés         | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Déchèterie       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Adresse          | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
+|                 | Status           | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 
 - Un secrétaire, un chauffeur ou un responsable ne peut que travailler pour une déchèterie principale.
 - Toutes les informations doivent être uniquement disponible pour les employé de la même déchèterie principale. Par exemple il est impossible de voir les ramassage d'une autre déchèterie principale.
