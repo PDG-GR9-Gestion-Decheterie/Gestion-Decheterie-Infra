@@ -163,6 +163,8 @@ INSERT INTO decheterie (id, nom, FK_adresse) VALUES
 (1, 'Decheterie Yverdon', 1);
 
 -- Insert data into the 'principale' table
+INSERT INTO principale (FK_principale, FK_decheterie) VALUES
+(1, 1);
 
 -- Insert data into the 'fonction' table
 INSERT INTO fonction (nom) VALUES

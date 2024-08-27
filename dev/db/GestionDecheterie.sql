@@ -184,9 +184,11 @@ INSERT INTO decheterie (id, nom, FK_adresse) VALUES
 
 -- Insert data into the 'principale' table
 INSERT INTO principale (FK_principale, FK_decheterie) VALUES
+(1, 1),
 (1, 2),
 (1, 3),
 (1, 4),
+(5, 5),
 (5, 6);
 
 -- Insert data into the 'fonction' table
