@@ -14,6 +14,7 @@ services:
     volumes:
       - pg_data:/bitnami/postgresql 
       - ./db:/docker-entrypoint-initdb.d
+      - ../dataAdresse:/dataAdresse
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "bdr"]
       interval: 10s

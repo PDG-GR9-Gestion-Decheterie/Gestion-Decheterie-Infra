@@ -6,6 +6,12 @@
 --
 
 ------------------------------------------------------------------------------------------------------------------------
+-- Installation des extensions
+------------------------------------------------------------------------------------------------------------------------
+
+-- CREATE EXTENSION IF NOT EXISTS postgis;
+
+------------------------------------------------------------------------------------------------------------------------
 -- Crétion des tables
 ------------------------------------------------------------------------------------------------------------------------
 CREATE SCHEMA gestion_decheterie;
@@ -27,13 +33,12 @@ CREATE TABLE employe (
 );
 
 CREATE TABLE adresse (
-    id INTEGER,
-    rue VARCHAR(30) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    NPA VARCHAR(10) NOT NULL,
-    nomVille VARCHAR(30) NOT NULL,
-    pays VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    id SERIAL PRIMARY KEY,
+    number VARCHAR(30),
+    street VARCHAR(255),
+    city VARCHAR(255),
+    region VARCHAR(50),
+    postcode VARCHAR(30)
 );
 
 CREATE TABLE decheterie (
@@ -154,24 +159,12 @@ ADD CONSTRAINT fk_superviseur_superviseur
 -- Insertion des données
 ------------------------------------------------------------------------------------------------------------------------
 BEGIN;
+
 -- Insert data into the 'adresse' table
-INSERT INTO adresse (id, rue, numero, NPA, nomVille, pays) VALUES
-(1, 'Chemin du petit pas', '10', '1400', 'Yverdon-les-Bains', 'Suisse'),
-(2, 'Chemin du fleuve', '12', '1462', 'Yvonand', 'Suisse'),
-(3, 'Chemin du petit son', '11', '1441', 'Grandson', 'Suisse'),
-(4, 'Chemin du grand pas', '14', '1880', 'Bex', 'Suisse'),
-(5, 'Chemin des bains', '10', '1881', 'Saillon', 'Suisse'),
-(6, 'Chemin du ski', '21', '1882', 'Verbier', 'Suisse'),
-(7, 'Chemin du lac', '15', '1400', 'Lausanne', 'Suisse'),
-(8, 'Chemin du mont', '16', '1462', 'Geneva', 'Suisse'),
-(9, 'Chemin du champ', '17', '1441', 'Zurich', 'Suisse'),
-(10, 'Chemin du bois', '18', '1880', 'Bern', 'Suisse'),
-(11, 'Chemin du ruisseau', '19', '1881', 'Lugano', 'Suisse'),
-(12, 'Chemin du pont', '20', '1882', 'Lucerne', 'Suisse'),
-(13, 'Chemin du moulin', '21', '1400', 'Basel', 'Suisse'),
-(14, 'Chemin du chateau', '22', '1462', 'St. Gallen', 'Suisse'),
-(15, 'Chemin du parc', '23', '1441', 'La Chaux-de-Fonds', 'Suisse'),
-(16, 'Chemin du jardin', '24', '1880', 'Fribourg', 'Suisse');
+COPY adresse (number, street, city, region, postcode)
+FROM '/dataAdresse/source.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES
