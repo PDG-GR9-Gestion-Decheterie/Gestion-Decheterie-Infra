@@ -27,13 +27,12 @@ CREATE TABLE employe (
 );
 
 CREATE TABLE adresse (
-    id INTEGER,
-    rue VARCHAR(30) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    NPA VARCHAR(10) NOT NULL,
-    nomVille VARCHAR(30) NOT NULL,
-    pays VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    id SERIAL PRIMARY KEY,
+    number VARCHAR(30),
+    street VARCHAR(255),
+    city VARCHAR(255),
+    region VARCHAR(50),
+    postcode VARCHAR(30)
 );
 
 CREATE TABLE decheterie (
@@ -155,8 +154,9 @@ ADD CONSTRAINT fk_superviseur_superviseur
 ------------------------------------------------------------------------------------------------------------------------
 BEGIN;
 -- Insert data into the 'adresse' table
-INSERT INTO adresse (id, rue, numero, NPA, nomVille, pays) VALUES
-(1, 'Chemin du petit pas', '10', '1400', 'Yverdon-les-Bains', 'Suisse');
+COPY adresse (number, street, city, region, postcode)
+FROM '/dataAdresse/source.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES

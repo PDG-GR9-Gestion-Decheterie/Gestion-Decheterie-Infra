@@ -17,8 +17,6 @@
 CREATE SCHEMA gestion_decheterie;
 SET search_path TO gestion_decheterie;
 
-CREATE EXTENSION IF NOT EXISTS postgis;
-
 CREATE TABLE employe (
     idLogin VARCHAR(30),
     mdpLogin CHAR(60) NOT NULL,
@@ -38,9 +36,7 @@ CREATE TABLE adresse (
     id SERIAL PRIMARY KEY,
     number VARCHAR(30),
     street VARCHAR(255),
-    unit VARCHAR(50),
     city VARCHAR(255),
-    district VARCHAR(255),
     region VARCHAR(50),
     postcode VARCHAR(30)
 );
@@ -165,7 +161,7 @@ ADD CONSTRAINT fk_superviseur_superviseur
 BEGIN;
 
 -- Insert data into the 'adresse' table
-COPY adresse (number, street, unit, city, district, region, postcode)
+COPY adresse (number, street, city, region, postcode)
 FROM '/dataAdresse/source.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
