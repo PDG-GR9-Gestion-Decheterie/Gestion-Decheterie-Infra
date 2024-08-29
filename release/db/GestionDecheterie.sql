@@ -28,11 +28,11 @@ CREATE TABLE employe (
 
 CREATE TABLE adresse (
     id SERIAL PRIMARY KEY,
-    number VARCHAR(30),
+    number VARCHAR(50),
     street VARCHAR(255),
     city VARCHAR(255),
     region VARCHAR(50),
-    postcode VARCHAR(30)
+    postcode VARCHAR(50)
 );
 
 CREATE TABLE decheterie (
