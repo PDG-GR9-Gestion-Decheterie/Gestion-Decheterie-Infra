@@ -36,6 +36,7 @@
 5.4.1. Intégration continue et gestion des branches
 5.4.2. Pipeline
 5.4.3. Tests
+5.4.4. Schéma workflow
 
 
 ### 1. Description du projet
@@ -184,11 +185,13 @@ Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la mais
 **Autres Modules :** Bien que ce mockup se concentre sur la fonctionnalité "Ramassage", les autres modules comme "Employés", "Véhicules", "Déchetèries", "Contenants", etc. suivent une logique similaire.
 L'utilisateur peut accéder à ces sections depuis le menu, visualiser des listes d'éléments (employés, véhicules, etc.), consulter des détails spécifiques, ajouter de nouveaux éléments, et modifier ou supprimer les existants.
 
-![Mockup](docs/img/Mockup_schema.png "schéma mockup")
+![Mockup](docs/img/Mockup_schema.png "Schéma mockup")
 
 Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheterie.github.io/) que vous pouvez aller consulter à l'url suivante : https://pdg-gr9-gestion-decheterie.github.io
 
 ### 4. Description des choix techniques
+
+![Infra](docs/img/infra.png "Infrastructure")
 
 #### 4.1. Backend
 
@@ -223,7 +226,7 @@ Des cycles de développement courts : Ils nous permettent de réagir rapidement 
 Des tests automatisés : Ces tests garantissent la fiabilité du code, réduisent les erreurs et accélèrent les cycles de développement.
 Une planification progressive et flexible : Cette approche nous donne la possibilité d'adapter facilement nos priorités selon l'évolution du projet.
 
-Nous avons décidé de mettre en place les pratiques suivantes pour nous aider dans le développement:
+Nous avons décidé de mettre en place les pratiques suivantes pour nous aider dans le développement :
 
 #### 5.1. Travail en pair programming
 
@@ -267,4 +270,8 @@ Le Pipeline constsite en scripts github actions qui monitorent les pushs sur la 
 ##### 5.4.3. Tests
 
 Des tests automatiques sont également efféctués sur le repository **backend** à chaque push. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
+
+##### 5.4.4. Schéma workflow
+
+![Workflow](docs/img/workflow.png "Workflow")
 
