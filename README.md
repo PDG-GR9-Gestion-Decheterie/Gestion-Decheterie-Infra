@@ -148,7 +148,7 @@ Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la mais
 **Autres Modules :** Bien que ce mockup se concentre sur la fonctionnalité "Ramassage", les autres modules comme "Employés", "Véhicules", "Déchetèries", etc. suivent une logique similaire.
 L'utilisateur peut accéder à ces sections depuis le menu, visualiser des listes d'éléments (employés, véhicules, etc.), consulter des détails spécifiques, ajouter de nouveaux éléments, et modifier ou supprimer les existants.
 
-![Mockup](img/Mockup_schema.png "schéma mockup")
+![Mockup](docs/img/Mockup_schema.png "schéma mockup")
 
 Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheterie.github.io/) que vous pouvez aller consulter à l'url suivante : https://pdg-gr9-gestion-decheterie.github.io
 
