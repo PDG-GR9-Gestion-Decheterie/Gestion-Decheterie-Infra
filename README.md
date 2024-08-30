@@ -5,37 +5,61 @@
 ## Table des matières
 
 1. Description du projet
+   
 1.1. Objectifs
+
 1.2. Exigences fonctionnelles
+
 1.2.1. Besoins fonctionnels - Données
+
 1.2.2. Besoins fonctionnels - Roles
+
 1.2.3. Besoins fonctionnels - Connexion
+
 1.2.4. Exigences non-fonctionnelles
 
 2. Description préliminaire de l’architecture
+   
 2.1. Backend
+
 2.2. Frontend
+
 2.3. Base de données
+
 2.4. Reverse proxy
+
 2.5. Environnement de deploiment
 
 3. Mockups / Landing page
 
 4. Description des choix techniques
+   
 4.1. Backend
+
 4.2. Frontend
+
 4.3. Base de données
+
 4.4. Reverse proxy
+
 4.5. Environnement de deploiment
 
 5. Description du processus de travail
+   
 5.1. Travail en pair programming
+
 5.2. Tests avant le code (Test-First Programming)
+
 5.3. Répartition des tâches
+
 5.4. Structuration de notre travail
+
 5.4.1. Intégration continue et gestion des branches
+
 5.4.2. Pipeline
+
 5.4.3. Tests
+
 5.4.4. Schéma workflow
 
 
