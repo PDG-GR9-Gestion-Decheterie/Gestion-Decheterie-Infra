@@ -52,6 +52,7 @@ services:
       - BACKEND_APP_API_URL=${BACKEND_APP_API_URL}
       - DATABASE_URL=${DATABASE_URL}
       - SEQUELIZE_LOGS=${SEQUELIZE_LOGS}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
     depends_on:
       postgresql:
         condition: service_healthy
