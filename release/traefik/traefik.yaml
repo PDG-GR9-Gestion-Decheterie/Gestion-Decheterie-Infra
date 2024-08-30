@@ -1,8 +1,12 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
 # Define providers
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
-    exposedByDefault: true
+    exposedByDefault: false
 
 # Define entrypoints
 entryPoints:
@@ -16,14 +20,20 @@ entryPoints:
           permanent: true
   https:
     address: ":443"
+    http:
+      tls:
+        certResolver: letsencrypt
+
+# Define certificates
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: yourmail@mail.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: http
 
 # Configure the API
 api:
   insecure: true
   dashboard: true
-
-# Define TLS
-tls:
-  certificates:
-    - certFile: "/etc/traefik/certificates/cert.pem"
-      keyFile: "/etc/traefik/certificates/key.pem"

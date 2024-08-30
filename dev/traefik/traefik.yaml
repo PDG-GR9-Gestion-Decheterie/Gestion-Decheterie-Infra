@@ -1,3 +1,7 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
 # Define providers
 providers:
   docker:
