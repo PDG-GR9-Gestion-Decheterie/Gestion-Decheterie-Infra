@@ -27,7 +27,7 @@ services:
       - --providers.docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik/ssl:/etc/traefik/certificates
+      - ./acme.json:/acme.json
       - ./traefik/traefik.yaml:/etc/traefik/traefik.yaml
     ports:
       - "80:80" # Web sites
@@ -38,9 +38,11 @@ services:
     image: justinferrara968/gestion-decheterie-backend:main
     restart: always
     labels:
+      - traefik.enable=true
       - traefik.http.routers.backend.rule=Host(`gestion-decheterie.internet-box.ch`) &&
         PathPrefix(`/api`)
       - traefik.http.routers.backend.entrypoints=https
+      - traefik.http.routers.backend.tls.certresolver=letsencrypt
       - traefik.http.routers.backend.tls=true
       - traefik.http.services.backend.loadbalancer.sticky=true
       - traefik.http.services.backend.loadbalancer.sticky.cookie.name=StickyCookie
@@ -61,8 +63,10 @@ services:
     image: justinferrara968/gestion-decheterie-frontend:main
     restart: always
     labels:
+      - traefik.enable=true
       - traefik.http.routers.frontend.rule=Host(`gestion-decheterie.internet-box.ch`)
       - traefik.http.routers.frontend.entrypoints=https
+      - traefik.http.routers.frontend.tls.certresolver=letsencrypt
       - traefik.http.routers.frontend.tls=true
     deploy:
       replicas: 1
