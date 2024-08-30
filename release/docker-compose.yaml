@@ -1,14 +1,13 @@
-
 services:
   postgresql:
     image: "bitnami/postgresql:16"
     container_name: bdr-postgresql
     restart: always
     environment:
-      - POSTGRESQL_USERNAME=bdr
-      - POSTGRESQL_PASSWORD=bdr
-      - POSTGRESQL_DATABASE=bdr
-      - POSTGRESQL_POSTGRES_PASSWORD=root
+      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+      - POSTGRESQL_POSTGRES_PASSWORD=${POSTGRESQL_POSTGRES_PASSWORD}
     ports:
       - 5432:5432
     volumes:
@@ -16,7 +15,7 @@ services:
       - ./db:/docker-entrypoint-initdb.d
       - ../dataAdresse:/dataAdresse
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "bdr"]
+      test: ["CMD", "pg_isready", "-U", "${POSTGRESQL_USERNAME}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -50,10 +49,9 @@ services:
     deploy:
       replicas: 1
     environment:
-      - BACKEND_APP_API_URL=https://gestion-decheterie.internet-box.ch
-      - DATABASE_URL=postgres://bdr:bdr@postgresql:5432/bdr
-      - SEQUELIZE_LOGS=false
-      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+      - BACKEND_APP_API_URL=${BACKEND_APP_API_URL}
+      - DATABASE_URL=${DATABASE_URL}
+      - SEQUELIZE_LOGS=${SEQUELIZE_LOGS}
     depends_on:
       postgresql:
         condition: service_healthy
@@ -68,7 +66,7 @@ services:
     deploy:
       replicas: 1
     environment:
-      - REACT_APP_API_URL=https://gestion-decheterie.internet-box.ch
+      - REACT_APP_API_URL=${REACT_APP_API_URL}
 
 volumes:
   pg_data:
