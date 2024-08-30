@@ -193,6 +193,20 @@ Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheter
 
 ![Infra](docs/img/infra.png "Infrastructure")
 
+Voici une liste des technologies que nous avons utilisé, ainsi qu'une explication de notre choix pour certain :
+- bCrypt
+- Passport
+- Express
+- Compression
+- Winston
+- Swagger
+- MUI
+- React
+- Traefik
+- Postgres
+- Docker
+- NodeJS
+
 #### 4.1. Backend
 
 Nous avons choisi **Node.js** pour son efficacité à gérer plusieurs clients simultanément sur un même thread, grâce à son architecture non bloquante et basée sur des événements. Cette approche permet de garder de bonnes performances, notamment pour dans le cadre d'API où un grand nombre de requêtes concurrentes sont effectuées.
