@@ -50,3 +50,5 @@ docker compose up -d
 ```
 Votre modification est maintenant en production et disponible pour les utilisateurs.
 
+## Schéma du Pipeline CI/CD
+![Pipeline CI/CD](img/workflow.png)
