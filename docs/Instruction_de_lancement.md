@@ -68,3 +68,7 @@ Le dossier `Gestion-Decheterie-Infra` contient plusieurs sous-dossiers important
 - **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub.
 
 - **test** : Ce dossier contient des données de test utilisées pour les tests unitaires.
+### Documentation
+Nous avons mis en place une documentation interactive avec Swagger pour notre API. Pour y accéder, il suffit d'ajouter `/api-docs` à l'URL de votre application. Par exemple, si votre application est en cours d'exécution sur `http://localhost`, vous pouvez accéder à la documentation Swagger en allant à l'URL suivante :
+http://localhost/api-docs
+Cette documentation vous permet de visualiser et de tester les différentes routes de l'API de manière interactive.
