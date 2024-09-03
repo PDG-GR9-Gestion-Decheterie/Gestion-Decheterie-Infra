@@ -28,8 +28,26 @@ Vous devez récupérer les releases des trois dépôts Git suivants et les extra
     ├── Gestion-Decheterie-Backend
     └── Gestion-Decheterie-Frontend
    ```
+
+   Pour la release de l'infrastructure, vous devez extraire le contenu du dossier et prendre le fichier `source.csv` pour le mettre à la place de celui dans le dossier `dataAdresse`.
+
+   ```bash
+    /votre-dossier-projet
+    ├── Gestion-Decheterie-Infra
+    │   ├── dev
+    │   ├── release
+    │   └── dataAdresse
+    │       └── source.csv
+    ├── Gestion-Decheterie-Backend
+    └── Gestion-Decheterie-Frontend
+   ```
+
 3. **Lancer le projet en local**
 Pour lancer le projet en local, suivez les étapes ci-dessous :
+- Mettre la clé Google API pour le service Google Map dans le fichier [`Gestion-Decheterie-Infra/dev/.env`](../dev/.env). Si vous n'avez pas de clé, vous pouvez en créer en suivant ce [lien](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=fr) :
+```bash
+REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
 - Accédez au dossier `Gestion-Decheterie-Infra/dev` :
 ```bash
 cd Gestion-Decheterie-Infra/dev
@@ -45,10 +63,8 @@ Cette commande va automatiquement :
 - Remplir la DB avec les données de test
 
 4. **Accéder à l'application**
-Une fois le lancement terminé, vous pouvez accéder à l'application en ouvrant un navigateur et en allant à l'URL suivante :
-```
-https://localhost
-```
+Une fois le lancement terminé, vous pouvez accéder à l'application en ouvrant un navigateur et en allant à l'URL suivante : [https://localhost](https://localhost).
+
 Vous devriez maintenant voir l'application en cours d'exécution.
 
 ### Informations de connexion
@@ -69,9 +85,13 @@ Cette documentation vous permet de visualiser et de tester les différentes rout
 
 Le dossier `Gestion-Decheterie-Infra` contient plusieurs sous-dossiers importants pour la gestion de l'infrastructure :
 
-- **dev** : Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement localhost. Les images Docker sont construites en local.
+- **dev** : Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement localhost. Les images Docker sont construites en local. Les certificats SSL sont auto-signés c'est pourquoi nous avons un warning de sécurité dans le navigateur.
 
-- **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub. Pour la lancer sur vos serveurs de production il faut modifier les variables d'environnement dans les fichier `release/.env`, `release/docker-compose.yaml` et `release/traefik/traefik.yaml`et exécuter la commande suivante sur le serveur  dans le dossier `Gestion-Decheterie-Infra/release` :
+- **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL (qui sont obtenu par le reverse proxy) pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub. Pour la lancer sur vos serveurs de production il faut modifier les variables d'environnement dans les fichier:
+- `release/.env`
+- `release/docker-compose.yaml`
+- `release/traefik/traefik.yaml`  
+Et exécuter la commande suivante sur le serveur  dans le dossier `Gestion-Decheterie-Infra/release` :
    ```bash
    docker compose up --build
    ```
