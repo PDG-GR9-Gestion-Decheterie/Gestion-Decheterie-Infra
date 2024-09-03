@@ -70,9 +70,9 @@ Cette documentation vous permet de visualiser et de tester les différentes rout
 
 Le dossier `Gestion-Decheterie-Infra` contient plusieurs sous-dossiers importants pour la gestion de l'infrastructure :
 
-- **dev** : Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement. Les images Docker sont construites en local.
+- **dev** : Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement localhost. Les images Docker sont construites en local.
 
-- **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub. Pour la lancer en production il faut modifier les variables d'environnement dans les fichier `release/.env`, `release/docker-compose.yaml`, `release/traefik/traefik.yaml` et `Gestion-Decheterie-Frontend/frontend/dockerfileDeploy` et exécuter la commande suivante sur le serveur  dans le dossier `Gestion-Decheterie-Infra/release` :
+- **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub. Pour la lancer sur vos serveurs de production il faut modifier les variables d'environnement dans les fichier `release/.env`, `release/docker-compose.yaml`, `release/traefik/traefik.yaml` et `Gestion-Decheterie-Frontend/frontend/dockerfileDeploy` et exécuter la commande suivante sur le serveur  dans le dossier `Gestion-Decheterie-Infra/release` :
    ```bash
    docker compose up --build
    ```
