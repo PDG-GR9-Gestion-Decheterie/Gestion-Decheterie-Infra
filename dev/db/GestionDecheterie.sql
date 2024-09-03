@@ -162,12 +162,12 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES
-(1, 'Decheterie Yverdon', 1),
-(2, 'Decheterie Yvonand', 2),
-(3, 'Decheterie Grandson', 3),
-(4, 'Decheterie Bex', 4),
-(5, 'Decheterie Saillon', 5),
-(6, 'Decheterie Verbier', 6);
+(1, 'Decheterie Yverdon', 1767104),
+(2, 'Decheterie Yvonand', 2981798),
+(3, 'Decheterie Grandson', 1659560),
+(4, 'Decheterie Bex', 2984468),
+(5, 'Decheterie Saillon', 3086255),
+(6, 'Decheterie Verbier', 3041661);
 
 -- Insert data into the 'principale' table
 INSERT INTO principale (FK_principale, FK_decheterie) VALUES
