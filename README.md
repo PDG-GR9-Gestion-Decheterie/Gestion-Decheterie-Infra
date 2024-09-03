@@ -5,37 +5,61 @@
 ## Table des matières
 
 1. Description du projet
+   
 1.1. Objectifs
+
 1.2. Exigences fonctionnelles
+
 1.2.1. Besoins fonctionnels - Données
+
 1.2.2. Besoins fonctionnels - Roles
+
 1.2.3. Besoins fonctionnels - Connexion
+
 1.2.4. Exigences non-fonctionnelles
 
 2. Description préliminaire de l’architecture
+   
 2.1. Backend
+
 2.2. Frontend
+
 2.3. Base de données
+
 2.4. Reverse proxy
+
 2.5. Environnement de deploiment
 
 3. Mockups / Landing page
 
 4. Description des choix techniques
+   
 4.1. Backend
+
 4.2. Frontend
+
 4.3. Base de données
+
 4.4. Reverse proxy
+
 4.5. Environnement de deploiment
 
 5. Description du processus de travail
+   
 5.1. Travail en pair programming
+
 5.2. Tests avant le code (Test-First Programming)
+
 5.3. Répartition des tâches
+
 5.4. Structuration de notre travail
+
 5.4.1. Intégration continue et gestion des branches
+
 5.4.2. Pipeline
+
 5.4.3. Tests
+
 5.4.4. Schéma workflow
 
 
@@ -193,19 +217,20 @@ Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheter
 
 ![Infra](docs/img/infra.png "Infrastructure")
 
-Voici une liste des technologies que nous avons utilisé, ainsi qu'une explication de notre choix pour certain :
-- bCrypt
-- Passport
-- Express
-- Compression
-- Winston
-- Swagger
-- MUI
-- React
-- Traefik
-- Postgres
-- Docker
-- NodeJS
+Voici une liste des technologies que nous avons utilisées, ainsi qu'une explication de notre choix pour chacune :
+
+- **bCrypt** : Utilisé pour le hachage des mots de passe afin de garantir la sécurité des informations d'authentification.
+- **Passport** : Middleware d'authentification pour Node.js, utilisé pour gérer les stratégies d'authentification.
+- **Express** : Framework web minimaliste pour Node.js, utilisé pour créer notre API backend.
+- **Compression** : Middleware pour Express qui permet de compresser les réponses HTTP, améliorant ainsi les performances.
+- **Winston** : Bibliothèque de journalisation pour Node.js, utilisée pour enregistrer les logs de l'application.
+- **Swagger** : Outil pour générer de la documentation interactive pour notre API, facilitant ainsi le développement et les tests.
+- **MUI** : Bibliothèque de composants React pour créer des interfaces utilisateur modernes et réactives.
+- **React** : Bibliothèque JavaScript pour construire des interfaces utilisateur dynamiques et performantes.
+- **Traefik** : Proxy inverse et load balancer moderne, utilisé pour gérer le routage des requêtes HTTP vers les différents services.
+- **Postgres** : Système de gestion de base de données relationnelle, choisi pour sa robustesse et ses fonctionnalités avancées.
+- **Docker** : Plateforme de conteneurisation, utilisée pour déployer et gérer les services de l'application de manière isolée et portable.
+- **NodeJS** : Environnement d'exécution JavaScript côté serveur, utilisé pour construire notre backend.
 
 #### 4.1. Backend
 
