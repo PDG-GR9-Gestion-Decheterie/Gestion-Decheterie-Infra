@@ -217,19 +217,20 @@ Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheter
 
 ![Infra](docs/img/infra.png "Infrastructure")
 
-Voici une liste des technologies que nous avons utilisé, ainsi qu'une explication de notre choix pour certain :
-- bCrypt
-- Passport
-- Express
-- Compression
-- Winston
-- Swagger
-- MUI
-- React
-- Traefik
-- Postgres
-- Docker
-- NodeJS
+Voici une liste des technologies que nous avons utilisées, ainsi qu'une explication de notre choix pour chacune :
+
+- **bCrypt** : Utilisé pour le hachage des mots de passe afin de garantir la sécurité des informations d'authentification.
+- **Passport** : Middleware d'authentification pour Node.js, utilisé pour gérer les stratégies d'authentification.
+- **Express** : Framework web minimaliste pour Node.js, utilisé pour créer notre API backend.
+- **Compression** : Middleware pour Express qui permet de compresser les réponses HTTP, améliorant ainsi les performances.
+- **Winston** : Bibliothèque de journalisation pour Node.js, utilisée pour enregistrer les logs de l'application.
+- **Swagger** : Outil pour générer de la documentation interactive pour notre API, facilitant ainsi le développement et les tests.
+- **MUI** : Bibliothèque de composants React pour créer des interfaces utilisateur modernes et réactives.
+- **React** : Bibliothèque JavaScript pour construire des interfaces utilisateur dynamiques et performantes.
+- **Traefik** : Proxy inverse et load balancer moderne, utilisé pour gérer le routage des requêtes HTTP vers les différents services.
+- **Postgres** : Système de gestion de base de données relationnelle, choisi pour sa robustesse et ses fonctionnalités avancées.
+- **Docker** : Plateforme de conteneurisation, utilisée pour déployer et gérer les services de l'application de manière isolée et portable.
+- **NodeJS** : Environnement d'exécution JavaScript côté serveur, utilisé pour construire notre backend.
 
 #### 4.1. Backend
 
@@ -245,7 +246,9 @@ Nous avons choisi **React** pour sa popularité lorsqu'il s'agit de développer 
 
 #### 4.3. Base de données
 
-Nous avons choisi **PostgreSQL** parce que c'est un SGBD open source reconnu pour sa fiabilité et qu'il est idéal pour les applications nécessitant un haut niveau de performance.
+Nous avons choisi **PostgreSQL** parce que c'est un SGBD open source reconnu pour sa fiabilité et qu'il est idéal pour les applications nécessitant un haut niveau de performance. 
+
+Pour la gestion des adresses, nous avons décidé de ne pas laisser l'utilisateur les créer manuellement. À la place, nous avons téléchargé toutes les adresses de Suisse et les avons insérées directement dans la table `adresses` de notre schéma. Cela nous assure que nous n'aurons jamais de problème de compatibilité entre les adresses et l'API Google Maps.
 
 #### 4.4. Reverse proxy
 
@@ -255,6 +258,19 @@ Il permet également de gérer plusieurs nom de domaine différents sur la même
 #### 4.5. Environnement de deploiment
 
 Nous avons choisi la solution d'héberger notre propre infrastrucure car cette solution est gratuite, garanti la sécurité des données et nous permet de vendre notre solution clé en main à héberger directement chez le client. De cette manière nous pouvons mettre en avant la sécurité et la confidentialité des données avec notre solution.
+
+#### 4.6. Utilisation de API Google Maps
+Google Maps est un excellent outil très performant pour notre application, notamment pour l'algorithme de calcul du meilleur chemin à prendre. Grâce à ses fonctionnalités avancées, nous pouvons déterminer les itinéraires optimaux en tenant compte de divers facteurs tels que la distance, le temps de trajet et les conditions de circulation en temps réel.
+
+En plus de l'algorithme de calcul d'itinéraire, l'API Google Maps nous permet de récupérer une multitude d'informations utiles, telles que :
+- Le temps de trajet estimé entre deux points
+- La distance en kilomètres
+- Les conditions de trafic en temps réel
+
+Ces informations sont cruciales pour offrir une expérience utilisateur optimale et pour garantir l'efficacité de notre service. En intégrant l'API Google Maps, nous pouvons fournir des recommandations précises et fiables pour les trajets.
+
+### 4.7. tests
+Nous avons effectué de nombreux tests unitaires automatiques sur GitHub pour vérifier le bon fonctionnement du backend et l'intégration avec la base de données. Ces tests nous permettent de garantir la fiabilité et la robustesse de notre application, en détectant et en corrigeant rapidement les éventuels problèmes.
 
 ### 5. Description du processus de travail
 

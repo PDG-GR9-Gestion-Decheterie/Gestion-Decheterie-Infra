@@ -160,7 +160,7 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 -- Insert data into the 'decheterie' table
 INSERT INTO decheterie (id, nom, FK_adresse) VALUES
-(1, 'Decheterie Yverdon', 1);
+(1, 'Decheterie Yverdon', 1767104);
 
 -- Insert data into the 'principale' table
 INSERT INTO principale (FK_principale, FK_decheterie) VALUES
