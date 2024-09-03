@@ -44,6 +44,10 @@
 
 4.5. Environnement de deploiment
 
+4.6. Utilisation de API Google Maps
+
+4.7. tests
+
 5. Description du processus de travail
    
 5.1. Travail en pair programming
@@ -118,7 +122,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 | Rôle            | Tables           | Lecture                            | Ajout                               | Modification                       | Suppression                        |
 |-----------------|------------------|------------------------------------|-------------------------------------|------------------------------------|------------------------------------|
 | **Employé + Chauffeur** | Ramassages       | ✅ Présents et futurs      | ✅                                 | ❌                                 | ❌                                 |
-|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Contenants       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
@@ -127,7 +131,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 |                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 | **Secrétaire**  | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
-|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |

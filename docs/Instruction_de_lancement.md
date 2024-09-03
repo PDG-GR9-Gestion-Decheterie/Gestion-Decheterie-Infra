@@ -60,8 +60,8 @@ Vous devriez maintenant voir l'application en cours d'exécution.
 |   rsmith2      |     123     |      Chauffeur    |
 
 ### Documentation
-Nous avons mis en place une documentation interactive avec Swagger pour notre API. Pour y accéder, il suffit d'ajouter `/api-docs` à l'URL de votre application. Par exemple, si votre application est en cours d'exécution sur `http://localhost`, vous pouvez accéder à la documentation Swagger en allant à l'URL suivante :
-http://localhost/api-docs
+Nous avons mis en place une documentation interactive avec Swagger pour notre API. Pour y accéder, il suffit d'ajouter `/api-docs` à l'URL de votre application. Par exemple, si votre application est en cours d'exécution sur `https://localhost`, vous pouvez accéder à la documentation Swagger en allant à l'URL suivante :
+https://localhost/api-docs
 Cette documentation vous permet de visualiser et de tester les différentes routes de l'API de manière interactive.
 
 ## Autres
@@ -79,5 +79,5 @@ Le dossier `Gestion-Decheterie-Infra` contient plusieurs sous-dossiers important
    - Identifiant : `admin`
    - Mot de passe : `jesuisicietpasla`
 
-- **test** : Ce dossier contient des données de test utilisées pour les tests unitaires.
+- **test** : Ce dossier contient des données de test utilisées pour les tests unitaires du backend lancés dans github actions.
 
