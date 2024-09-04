@@ -29,7 +29,7 @@ certificatesResolvers:
   letsencrypt:
     acme:
       email: yourmail@mail.com
-      storage: acme.json
+      storage: /etc/traefik/acme.json
       httpChallenge:
         entryPoint: http
 
