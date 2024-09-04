@@ -1,71 +1,36 @@
 # Gestion-Decheterie-Infra
 
-## Rapport
-
 ## Table des matières
 
-1. Description du projet
-   
-1.1. Objectifs
-
-1.2. Exigences fonctionnelles
-
-1.2.1. Besoins fonctionnels - Données
-
-1.2.2. Besoins fonctionnels - Roles
-
-1.2.3. Besoins fonctionnels - Connexion
-
-1.2.4. Exigences non-fonctionnelles
-
-2. Description préliminaire de l’architecture
-   
-2.1. Backend
-
-2.2. Frontend
-
-2.3. Base de données
-
-2.4. Reverse proxy
-
-2.5. Environnement de deploiment
-
-3. Mockups / Landing page
-
-4. Description des choix techniques
-   
-4.1. Backend
-
-4.2. Frontend
-
-4.3. Base de données
-
-4.4. Reverse proxy
-
-4.5. Environnement de deploiment
-
-4.6. Utilisation de API Google Maps
-
-4.7. tests
-
-5. Description du processus de travail
-   
-5.1. Travail en pair programming
-
-5.2. Tests avant le code (Test-First Programming)
-
-5.3. Répartition des tâches
-
-5.4. Structuration de notre travail
-
-5.4.1. Intégration continue et gestion des branches
-
-5.4.2. Pipeline
-
-5.4.3. Tests
-
-5.4.4. Schéma workflow
-
+1. [Description du projet](#1-description-du-projet)
+   1. [Objectifs](#11-objectifs)
+   2. [Exigences fonctionnelles](#12-exigences-fonctionnelles)
+      1. [Besoins fonctionnels - Données](#121-besoins-fonctionnels---données)
+      2. [Besoins fonctionnels - Roles](#122-besoins-fonctionnels---roles)
+      3. [Besoins fonctionnels - Connexion](#123-besoins-fonctionnels---connexion)
+      4. [Exigences non-fonctionnelles](#124-exigences-non-fonctionnelles)
+2. [Description préliminaire de l’architecture](#2-description-préliminaire-de-larchitecture)
+    1. [Backend](#21-backend)
+    2. [Frontend](#22-frontend)
+    3. [Base de données](#23-base-de-données)
+    4. [Reverse proxy](#24-reverse-proxy)
+    5. [Environnement de déploiment](#25-environnement-de-deploiment)
+3. [Mockups / Landing page](#3-mockups--landing-page)
+4. [Description des choix techniques](#4-description-des-choix-techniques)
+    1. [Backend](#41-backend)
+    2. [Frontend](#42-frontend)
+    3. [Base de données](#43-base-de-données)
+    4. [Reverse proxy](#44-reverse-proxy)
+    5. [Environnement de déploiement](#45-environnement-de-deploiment)
+5. [Description du processus de travail](#5-description-du-processus-de-travail)
+    1. [Travail en pair programming](#51-travail-en-pair-programming)
+    2. [Tests avant le code (Test-First Programming)](#52-tests-avant-le-code-test-first-programming)
+    3. [Répartition des tâches](#53-répartition-des-tâches)
+    4. [Structuration de notre travail](#54-structuration-de-notre-travail)
+        1. [Intégration continue et gestion des branches](#541-intégration-continue-et-gestion-des-branches)
+        2. [Pipeline](#542-pipeline)
+        3. [Tests](#543-tests)
+        4. [Schéma workflow](#544-schéma-workflow)
 
 ### 1. Description du projet
 
@@ -122,7 +87,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 | Rôle            | Tables           | Lecture                            | Ajout                               | Modification                       | Suppression                        |
 |-----------------|------------------|------------------------------------|-------------------------------------|------------------------------------|------------------------------------|
 | **Employé + Chauffeur** | Ramassages       | ✅ Présents et futurs      | ✅                                 | ❌                                 | ❌                                 |
-|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Contenants       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
@@ -131,7 +96,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 |                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 | **Secrétaire**  | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
-|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
@@ -190,7 +155,7 @@ La base de données est une base de données **PostgreSQL** avec un script d'ini
 
 Le reverse proxy utilise **Traefik** et permet au backend et au frontend d'être accessibles via le même port tout en répartissant les différentes requêtes au bon conteneur.
 
-#### 2.5. Environnement de deploiment
+#### 2.5. Environnement de déploiement
 
 Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la maison. Ce serveur nous permettra de déployer notre application et faire tourner notre infrastructure. Le serveur utilisera comme OS **ubuntu server** avec docker installé.
 
@@ -259,7 +224,7 @@ Pour la gestion des adresses, nous avons décidé de ne pas laisser l'utilisateu
 Nous avons choisi d'implémenter un reverse proxy afin de communiquer en http avec le serveur backend et le serveur frontend et de gérer la connexion ssl en un seul point. De plus, il permet de faire du load balancing avec sticky session et de rediriger certaines url sur un conteneur spécifique (/api).
 Il permet également de gérer plusieurs nom de domaine différents sur la même adresse IP publique.
 
-#### 4.5. Environnement de deploiment
+#### 4.5. Environnement de déploiement
 
 Nous avons choisi la solution d'héberger notre propre infrastrucure car cette solution est gratuite, garanti la sécurité des données et nous permet de vendre notre solution clé en main à héberger directement chez le client. De cette manière nous pouvons mettre en avant la sécurité et la confidentialité des données avec notre solution.
 
