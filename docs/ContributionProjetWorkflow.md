@@ -2,6 +2,13 @@
 
 ## Workflow de contribution
 
+### Prérequis
+Avant de commencer à coder veuillez lire les instructions suivantes :
+- Tous les commits doivent être signés.
+- Utilisez [VSCode](https://code.visualstudio.com/) comme éditeur de code avec les extensions ESLint et Prettier pour un formatage automatique du code.
+- Avant de faire une Pull Request, assurez-vous que votre code passe tous les tests [InstructionPiplineCICD.md](./InstructionPiplineCICD.md).
+
+
 Nous utilisons un workflow Git standard pour gérer les contributions à notre projet. Voici les étapes à suivre pour contribuer :
 1. **Forker le dépôt**
 
@@ -20,10 +27,18 @@ Nous utilisons un workflow Git standard pour gérer les contributions à notre p
     ```bash	
     git checkout -b ma-nouvelle-fonctionnalite
     ```
-4. **Faire vos modifications**
+4. **Créer une Issue**
+
+    Avant de commencer à travailler sur votre contribution, créez une issue pour discuter de votre idée. Cela permettra de s'assurer que votre contribution est nécessaire et qu'elle est en ligne avec les objectifs du projet.
+
+    Pour créer une issue, allez sur la page du dépôt GitHub et cliquez sur le bouton "Issues". Cliquez ensuite sur le bouton "New Issue" et remplissez le formulaire.
+
+    Une fois que vous avez créé l'issue, vous pouvez commencer à travailler sur votre contribution.
+5. **Faire vos modifications**
+
     Apportez les modifications nécessaires à votre branche. Assurez-vous de suivre les conventions de codage et les bonnes pratiques du projet.
 
-5. **Commiter vos modifications**
+6. **Commiter vos modifications**
 
     Une fois vos modifications terminées, ajoutez-les à l'index et faites un commit :
     ```bash
@@ -31,16 +46,16 @@ Nous utilisons un workflow Git standard pour gérer les contributions à notre p
     git commit -m "Ajout de ma nouvelle fonctionnalité"
     ```
 
-6. **Pousser votre branche**
+7. **Pousser votre branche**
 
     Poussez votre branche vers votre fork sur GitHub :
     ```bash	
     git push origin ma-nouvelle-fonctionnalite
     ```
-7. **Créer une Pull Request**
+8. **Créer une Pull Request**
 
-    Allez sur la page GitHub de votre fork et cliquez sur le bouton "New Pull Request". Sélectionnez la branche que vous avez créée et soumettez la Pull Request (PR) vers le dépôt principal.
+    Allez sur la page GitHub de votre fork et cliquez sur le bouton "New Pull Request". Sélectionnez la branche que vous avez créée et soumettez la Pull Request (PR) vers le dépôt principal. Assurez-vous de décrire votre contribution et de mentionner l'issue que vous avez créée comme ceci : `"Fix #123"` ou `"Closes #123"`.
 
-8. **Revue de code**
+9. **Revue de code**
 
-    Votre Pull Request sera examinée par les mainteneurs du projet. Ils peuvent vous demander des modifications ou des améliorations avant de fusionner votre contribution.
+    Votre Pull Request sera examinée par les mainteneurs du projet. Ils peuvent vous demander des modifications ou des améliorations avant de fusionner votre contribution sur la branche principale.
