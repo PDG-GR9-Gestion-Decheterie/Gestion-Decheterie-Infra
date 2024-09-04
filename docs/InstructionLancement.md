@@ -115,11 +115,7 @@ cd Gestion-Decheterie-Infra-1.0/release/
 ### 3. Configurer les paramètres de l'application
 
 ```bash
-nano .env # Ajoutez votre clé Google API pour le service Google Map
-
-.....
-
-REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+nano .env # Ajoutez votre clé Google API et adaptez les autres paramètres
 ```
    
 ```bash
