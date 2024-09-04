@@ -296,5 +296,5 @@ Des tests automatiques sont également efféctués sur le repository **backend**
 
 #### 5.4.4. Schéma workflow
 
-![Workflow](docs/img/workflow.png "Workflow")
+![Workflow](img/workflow.png "Workflow")
 
