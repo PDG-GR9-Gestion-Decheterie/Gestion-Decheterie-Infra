@@ -2,6 +2,13 @@
 
 ## Workflow de contribution
 
+### Prérequis
+Avant de commencer à coder veuillez lire les instructions suivantes :
+- Tous les commits doivent être signés.
+- Utilisez [VSCode](https://code.visualstudio.com/) comme éditeur de code avec les extensions ESLint et Prettier pour un formatage automatique du code.
+- Avant de faire une Pull Request, assurez-vous que votre code passe tous les tests [InstructionPiplineCICD.md](./InstructionPiplineCICD.md).
+
+
 Nous utilisons un workflow Git standard pour gérer les contributions à notre projet. Voici les étapes à suivre pour contribuer :
 1. **Forker le dépôt**
 

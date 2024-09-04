@@ -68,12 +68,13 @@ Une fois le lancement terminé, vous pouvez accéder à l'application en ouvrant
 Vous devriez maintenant voir l'application en cours d'exécution.
 
 ### Informations de connexion
-| idlogin | password | fonction |
-|:---------:|:----------:|:----------:|
-|   jdoe      |     123     |   Responsable       |
-|    jferrara     |   123       |    Secrétaire      |
-|   asmith      |     123     |      Employé    |
-|   rsmith2      |     123     |      Chauffeur    |
+|  idlogin  | password |   fonction    |
+|:---------:|:--------:|:-------------:|
+|   jdoe    |   123    | Responsable   |
+| jferrara  |   123    | Secrétaire    |
+|  asmith   |   123    |   Employé     |
+| rsmith2   |   123    |   Chauffeur   |
+
 
 ### Documentation
 Nous avons mis en place une documentation interactive avec Swagger pour notre API. Pour y accéder, il suffit d'ajouter `/api-docs` à l'URL de votre application. Par exemple, si votre application est en cours d'exécution sur `https://localhost`, vous pouvez accéder à la documentation Swagger en allant à l'URL suivante :
