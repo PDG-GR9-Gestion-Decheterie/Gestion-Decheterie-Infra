@@ -178,13 +178,13 @@ Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la mais
 **Autres Modules :** Bien que ce mockup se concentre sur la fonctionnalité "Ramassage", les autres modules comme "Employés", "Véhicules", "Déchetèries", "Contenants", etc. suivent une logique similaire.
 L'utilisateur peut accéder à ces sections depuis le menu, visualiser des listes d'éléments (employés, véhicules, etc.), consulter des détails spécifiques, ajouter de nouveaux éléments, et modifier ou supprimer les existants.
 
-![Mockup](docs/img/Mockup_schema.png "schéma mockup")
+![Mockup](img/Mockup_schema.png "schéma mockup")
 
 Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheterie.github.io/) que vous pouvez aller consulter à l'url suivante : https://pdg-gr9-gestion-decheterie.github.io
 
 ## 4. Description des choix techniques
 
-![Infra](docs/img/infra.png "Infrastructure")
+![Infra](img/infra.png "Infrastructure")
 
 Voici une liste des technologies que nous avons utilisées, ainsi qu'une explication de notre choix pour chacune :
 
@@ -238,7 +238,7 @@ En plus de l'algorithme de calcul d'itinéraire, l'API Google Maps nous permet d
 
 Ces informations sont cruciales pour offrir une expérience utilisateur optimale et pour garantir l'efficacité de notre service. En intégrant l'API Google Maps, nous pouvons fournir des recommandations précises et fiables pour les trajets.
 
-### 4.7. tests
+### 4.7. Tests
 Nous avons effectué de nombreux tests unitaires automatiques sur GitHub pour vérifier le bon fonctionnement du backend et l'intégration avec la base de données. Ces tests nous permettent de garantir la fiabilité et la robustesse de notre application, en détectant et en corrigeant rapidement les éventuels problèmes.
 
 ## 5. Description du processus de travail
