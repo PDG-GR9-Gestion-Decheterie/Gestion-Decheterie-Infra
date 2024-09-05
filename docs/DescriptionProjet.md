@@ -161,9 +161,11 @@ Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la mais
 
 ## 3. Mockups / Landing page
 
-**Écran de connexion :** L'utilisateur démarre en saisissant son nom d'utilisateur et son mot de passe sur une page de connexion sécurisée pour accéder au système.
+**Page d'acceuil :** L'utilisateur arrive sur la page d'accueil de l'application, où il peut consulter quelle déchèterie reprend quel type de déchet. Il peut également voir l'adresse de chaque déchèterie. Il n'y a pas besoin de se connecter pour accéder à cette page. Il peut cliquer sur un bouton pour accéder à la page de connexion.
 
-**Accueil après connexion :** Une fois connecté, l'utilisateur arrive sur la page d'accueil du logiciel. Cette page présente différentes options de navigation, telles que "Employés", "Ramassage", "Véhicules", et "Déchetèries", chacune représentée par un bouton distinct. A savoir que ceci n'est qu'un exemple. Les boutons pourront varier selon la personne connecté (ou tout simplement être remplacés par autre chose).
+**Page de connexion :** L'utilisateur démarre en saisissant son nom d'utilisateur et son mot de passe sur une page de connexion sécurisée pour accéder au système.
+
+**Accueil après connexion :** Une fois connecté, l'utilisateur reviens sur la page d'accueil du logiciel. Cette page est la même que la page d'acceuil mais avec des options de navigation, telles que "Employés", "Ramassage", "Véhicules", et "Déchetèries", chacune représentée par un bouton distinct. A savoir que ceci n'est qu'un exemple. Les boutons pourront varier selon la personne connecté (ou tout simplement être remplacés par autre chose).
 
 **Itinéraire :**  Cette page est dédiée aux chauffeurs et leur permet de visualiser l'itinéraire de leurs ramassages pour la journée. La carte affiche les trajets planifiés, facilitant ainsi la navigation pour les chauffeurs.
 
@@ -173,7 +175,7 @@ Nous utiliserons un PC x86 fixe comme serveur que nous ferons tourner à la mais
 
 **Modification/Suppression :** L'utilisateur a également la possibilité de modifier les détails du ramassage ou de le supprimer.
 
-**Ajout de Ramassage :** L'utilisateur peut remplir un formulaire pour ajouter un nouveau ramassage, en renseignant toutes les informations nécessaires telles que l'ID, la date, le véhicule utilisé, etc. avant de sauvegarder ces informations.
+**Ajout de Ramassage :** L'utilisateur peut remplir un formulaire pour ajouter un nouveau ramassage, en renseignant toutes les informations nécessaires telles que la date, le véhicule utilisé, etc. avant de sauvegarder ces informations.
 
 **Autres Modules :** Bien que ce mockup se concentre sur la fonctionnalité "Ramassage", les autres modules comme "Employés", "Véhicules", "Déchetèries", "Contenants", etc. suivent une logique similaire.
 L'utilisateur peut accéder à ces sections depuis le menu, visualiser des listes d'éléments (employés, véhicules, etc.), consulter des détails spécifiques, ajouter de nouveaux éléments, et modifier ou supprimer les existants.
@@ -188,18 +190,9 @@ Nous avons également créer une [Landing page](https://pdg-gr9-gestion-decheter
 
 Voici une liste des technologies que nous avons utilisées, ainsi qu'une explication de notre choix pour chacune :
 
-- **bCrypt** : Utilisé pour le hachage des mots de passe afin de garantir la sécurité des informations d'authentification.
-- **Passport** : Middleware d'authentification pour Node.js, utilisé pour gérer les stratégies d'authentification.
-- **Express** : Framework web minimaliste pour Node.js, utilisé pour créer notre API backend.
-- **Compression** : Middleware pour Express qui permet de compresser les réponses HTTP, améliorant ainsi les performances.
-- **Winston** : Bibliothèque de journalisation pour Node.js, utilisée pour enregistrer les logs de l'application.
-- **Swagger** : Outil pour générer de la documentation interactive pour notre API, facilitant ainsi le développement et les tests.
-- **MUI** : Bibliothèque de composants React pour créer des interfaces utilisateur modernes et réactives.
-- **React** : Bibliothèque JavaScript pour construire des interfaces utilisateur dynamiques et performantes.
-- **Traefik** : Proxy inverse et load balancer moderne, utilisé pour gérer le routage des requêtes HTTP vers les différents services.
-- **Postgres** : Système de gestion de base de données relationnelle, choisi pour sa robustesse et ses fonctionnalités avancées.
-- **Docker** : Plateforme de conteneurisation, utilisée pour déployer et gérer les services de l'application de manière isolée et portable.
-- **NodeJS** : Environnement d'exécution JavaScript côté serveur, utilisé pour construire notre backend.
+### 4.1. Infrastructure
+
+Nous avons choisi **Docker** pour sa facilité d'utilisation et sa portabilité. Docker permet de créer des conteneurs légers et portables qui peuvent être déployés sur n'importe quelle machine, ce qui facilite le déploiement et la gestion de l'application. De plus, Docker offre une isolation des services, ce qui permet de garantir la sécurité et la fiabilité de l'application.
 
 ### 4.1. Backend
 
@@ -207,7 +200,13 @@ Nous avons choisi **Node.js** pour son efficacité à gérer plusieurs clients s
 
 Pour structurer notre application, nous utiliserons **Express.js**. Express.js simplifie la gestion des routes, des middlewares et des requêtes HTTP, permettant de créer des API RESTful de manière efficace et flexible. De plus il y a un grand nombre de plugins disponibles pour toutes sortes de fonctionnalités.
 
-Nous utiliserons **Passport** pour gérer les cookies pour l'authentification des utilisateurs. Lié à bCrypt, cela permet d'avoir une authentificaiton sûre avec un stockage des mots de passe sécurisé dans la base de données.
+Nous utiliserons **Passport** pour gérer les cookies pour l'authentification des utilisateurs. Lié à **bCrypt**, cela permet d'avoir une authentificaiton sûre avec un stockage des mots de passe sécurisé dans la base de données.
+
+Nous utiliserons de la compression des réponses HTTP avec un Middleware dans Express pour améliorer les performances de l'application.
+
+Nous utiliserons **Winston** pour enregistrer les logs de l'application. Cela permet de suivre les erreurs et les événements importants de l'application.
+
+Nous utiliserons **Swagger** pour générer de la documentation interactive pour notre API. Cela facilite le développement et les tests, car les développeurs peuvent voir les endpoints disponibles et les paramètres nécessaires pour chaque requête.
 
 ### 4.2. Frontend
 
@@ -217,12 +216,15 @@ Nous avons choisi **React** pour sa popularité lorsqu'il s'agit de développer 
 
 Nous avons choisi **PostgreSQL** parce que c'est un SGBD open source reconnu pour sa fiabilité et qu'il est idéal pour les applications nécessitant un haut niveau de performance. 
 
-Pour la gestion des adresses, nous avons décidé de ne pas laisser l'utilisateur les créer manuellement. À la place, nous avons téléchargé toutes les adresses de Suisse et les avons insérées directement dans la table `adresses` de notre schéma. Cela nous assure que nous n'aurons jamais de problème de compatibilité entre les adresses et l'API Google Maps.
+Pour la gestion des adresses, nous avons décidé de ne pas laisser l'utilisateur les créer manuellement. À la place, nous avons téléchargé toutes les adresses de Suisse et les avons insérées directement dans la table `adresses` de notre schéma. Cela nous assure que nous n'aurons jamais de problème de compatibilité entre les adresses et l'API Google Maps. Nous avons trouver ces adresses sur le site [OpenAdresses](https://openaddresses.io/).
+
+#### 4.3.1. Schéma de la base de données
+
+![Database](img/DB_UML.png "Database")
 
 ### 4.4. Reverse proxy
 
-Nous avons choisi d'implémenter un reverse proxy afin de communiquer en http avec le serveur backend et le serveur frontend et de gérer la connexion ssl en un seul point. De plus, il permet de faire du load balancing avec sticky session et de rediriger certaines url sur un conteneur spécifique (/api).
-Il permet également de gérer plusieurs nom de domaine différents sur la même adresse IP publique.
+Nous avons choisi d'utiliser **Traefik** comme reverse proxy afin de communiquer en http avec le serveur backend et le serveur frontend et de gérer la connexion ssl en un seul point. De plus, il permet de faire du load balancing avec sticky session et de rediriger certaines url sur un conteneur spécifique (/api). Il permet également de gérer plusieurs nom de domaine différents sur la même adresse IP publique.
 
 ### 4.5. Environnement de déploiement
 
@@ -237,9 +239,6 @@ En plus de l'algorithme de calcul d'itinéraire, l'API Google Maps nous permet d
 - Les conditions de trafic en temps réel
 
 Ces informations sont cruciales pour offrir une expérience utilisateur optimale et pour garantir l'efficacité de notre service. En intégrant l'API Google Maps, nous pouvons fournir des recommandations précises et fiables pour les trajets.
-
-### 4.7. Tests
-Nous avons effectué de nombreux tests unitaires automatiques sur GitHub pour vérifier le bon fonctionnement du backend et l'intégration avec la base de données. Ces tests nous permettent de garantir la fiabilité et la robustesse de notre application, en détectant et en corrigeant rapidement les éventuels problèmes.
 
 ## 5. Description du processus de travail
 
@@ -292,7 +291,7 @@ Le Pipeline constsite en scripts github actions qui monitorent les pushs sur la 
 
 #### 5.4.3. Tests
 
-Des tests automatiques sont également efféctués sur le repository **backend** à chaque push. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
+Des tests automatiques sont également efféctués sur le repository **backend** à chaque push sur n'importe quelle branche. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
 
 #### 5.4.4. Schéma workflow
 

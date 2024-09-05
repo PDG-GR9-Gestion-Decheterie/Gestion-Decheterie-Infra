@@ -13,3 +13,6 @@ Bienvenue sur la page d'acceuil de l'Infrastructure du projet Gestion-déchèter
 - [Comment contribuer](./docs/ContributionProjetWorkflow.md)
 - [Pipeline CI/CD](./docs/InstructionPiplineCICD.md)
 - [Comment lancer le projet](./docs/InstructionLancement.md)
+
+## Démonstration
+- [https://gestion-decheterie.internet-box.ch](https://gestion-decheterie.internet-box.ch/employes)
