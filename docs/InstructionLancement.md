@@ -132,6 +132,13 @@ sudo docker compose up --build -d
 
 Vous devriez maintenant voir l'application en cours d'exécution sur votre serveur.
 
+> **Note :** L'application a été configurée pour être accessible via l'url `https://gestion-decheterie.internet-box.ch`. Vous pouvez modifier cette configuration en modifiant les fichiers de configuration suivants :
+> - [`Gestion-Decheterie-Infra/release/.env`](../release/.env)
+> - [`Gestion-Decheterie-Infra/release/docker-compose.yaml`](../release/docker-compose.yaml)
+
+> **Note :** Si vous souhaitez obtenir des emails concerants les certificats SSL, vous devez modifier le fichier de configuration suivant pour renseigner votre adresse email :
+> - [`Gestion-Decheterie-Infra/release/traefik/traefik.yml`](../release/traefik/traefik.yaml)
+
 ## Demonstration
 
 Une démonstration de l'application en production est disponible à l'adresse suivante : 
