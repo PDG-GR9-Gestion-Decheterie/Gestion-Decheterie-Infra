@@ -291,7 +291,7 @@ Le Pipeline est composé de scripts github actions qui monitorent les pushs sur 
 
 #### 5.4.3. Tests
 
-Des tests automatiques sont également efféctués sur le repository **backend** à chaque push sur n'importe quelle branche. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
+Des tests automatiques sont également efféctués sur le repository **backend** à chaque pull request depuis n'importe quelle branche. Ces tests sont des tests d'intégration avec la base de données pour vérifier que tout fonctionne correctement dans le backend. Ceci permet de garantir une bonne qualité de code.
 
 #### 5.4.4. Schéma workflow
 
