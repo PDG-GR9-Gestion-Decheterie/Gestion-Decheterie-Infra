@@ -125,6 +125,8 @@ chmod 600 traefik/acme.json
 ### 4. Lancer l'application
 
 ```bash
+sudo docker compose pull
+
 sudo docker compose up --build -d
 ```
 
