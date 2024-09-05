@@ -83,6 +83,7 @@ https://localhost/api-docs
 Cette documentation vous permet de visualiser et de tester les différentes routes de l'API de manière interactive.
 
 ## Lancer l'application en production
+Ces instructions sont faites pour lancer l'application en production sur un serveur linux.
 
 ### 1. Télécharger la release de l'infrastructure et les fichiers nécessaires
 
