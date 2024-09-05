@@ -12,9 +12,9 @@ Assurez-vous également d'avoir une clé Google API pour le service Google Map. 
 
 ### 1. Télécharger les releases des trois dépôts Git
 
-   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases)
-   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases)
-   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases)
+   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases/latest)
+   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases/latest)
+   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases/latest)
 
 ### 2. Extraire les releases
 
@@ -83,6 +83,7 @@ https://localhost/api-docs
 Cette documentation vous permet de visualiser et de tester les différentes routes de l'API de manière interactive.
 
 ## Lancer l'application en production
+Ces instructions sont faites pour lancer l'application en production sur un serveur linux.
 
 ### 1. Télécharger la release de l'infrastructure et les fichiers nécessaires
 
@@ -132,7 +133,14 @@ sudo docker compose up --build -d
 
 Vous devriez maintenant voir l'application en cours d'exécution sur votre serveur.
 
-## Demonstration
+> **Note :** L'application a été configurée pour être accessible via l'url `https://gestion-decheterie.internet-box.ch`. Vous pouvez modifier cette configuration en modifiant les fichiers de configuration suivants :
+> - [`Gestion-Decheterie-Infra/release/.env`](../release/.env)
+> - [`Gestion-Decheterie-Infra/release/docker-compose.yaml`](../release/docker-compose.yaml)
+
+> **Note :** Si vous souhaitez obtenir des emails concerants les certificats SSL, vous devez modifier le fichier de configuration suivant pour renseigner votre adresse email :
+> - [`Gestion-Decheterie-Infra/release/traefik/traefik.yml`](../release/traefik/traefik.yaml)
+
+## Démonstration
 
 Une démonstration de l'application en production est disponible à l'adresse suivante : 
 

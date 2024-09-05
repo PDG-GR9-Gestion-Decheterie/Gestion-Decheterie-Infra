@@ -33,10 +33,10 @@ Nous utilisons un workflow Git standard pour gérer les contributions à notre p
 
     Pour créer une issue, allez sur la page du dépôt GitHub et cliquez sur le bouton "Issues". Cliquez ensuite sur le bouton "New Issue" et remplissez le formulaire.
 
-    Une fois que vous avez créé l'issue, vous pouvez commencer à travailler sur votre contribution.
+    Une fois l'issue créée, vous pouvez commencer à travailler sur votre contribution.
 5. **Faire vos modifications**
 
-    Apportez les modifications nécessaires à votre branche. Assurez-vous de suivre les conventions de codage et les bonnes pratiques du projet.
+    Apportez les modifications nécessaires à votre branche. Assurez-vous de suivre les conventions de codage et les bonnes pratiques du language.
 
 6. **Commiter vos modifications**
 
