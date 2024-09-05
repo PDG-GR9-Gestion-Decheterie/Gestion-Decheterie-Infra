@@ -12,9 +12,9 @@ Assurez-vous également d'avoir une clé Google API pour le service Google Map. 
 
 ### 1. Télécharger les releases des trois dépôts Git
 
-   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases)
-   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases)
-   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases)
+   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases/latest)
+   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases/latest)
+   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases/latest)
 
 ### 2. Extraire les releases
 
