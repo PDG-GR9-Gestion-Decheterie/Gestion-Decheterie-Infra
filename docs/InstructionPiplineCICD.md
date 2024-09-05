@@ -8,7 +8,7 @@ Ce guide vous explique comment apporter une modification au code et l'amener en 
 Le processus de contribution est le même que celui décrit dans le guide [ContributionProjetWorkflow](ContributionProjetWorkflow.md).
 
 ### Étape 2 : Tester le code
-Lors de chaque push, les tests d'intégration du backend sont exécutés automatiquement. Assurez-vous que vos modifications dans le backend passent ces tests avant de créer une *pull request*. Si les tests doivent être mis à jour, vous pouvez les trouver dans le dossier `tests` du backend.
+Lors de chaque pull request, les tests d'intégration du backend sont exécutés automatiquement. Assurez-vous que vos modifications dans le backend passent ces tests. Si les tests doivent être mis à jour, vous pouvez les trouver dans le dossier `tests` du backend.
 
 ### Étape 4 : Créer une Pull Request
 - Accédez à votre dépôt sur GitHub.
