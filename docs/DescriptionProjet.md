@@ -36,7 +36,7 @@
 
 ### 1.1. Objectifs
 
-L'objectif de ce projet est de créer une application web avec une base de données dédié à la gestion des déchèteries de Suisse.
+L'objectif de ce projet est de créer une application web avec une base de données dédiée à la gestion des déchèteries de Suisse.
 
 Le but principal est de fournir un outil qui simplifiera la gestion des déchèteries nationales. Cette base de données permettra un suivi précis des informations essentielles, notament par exemple les ramassages, les employés, ...
 
