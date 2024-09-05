@@ -140,7 +140,7 @@ Vous devriez maintenant voir l'application en cours d'exécution sur votre serve
 > **Note :** Si vous souhaitez obtenir des emails concerants les certificats SSL, vous devez modifier le fichier de configuration suivant pour renseigner votre adresse email :
 > - [`Gestion-Decheterie-Infra/release/traefik/traefik.yml`](../release/traefik/traefik.yaml)
 
-## Demonstration
+## Démonstration
 
 Une démonstration de l'application en production est disponible à l'adresse suivante : 
 
