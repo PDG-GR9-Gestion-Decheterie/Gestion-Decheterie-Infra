@@ -21,4 +21,4 @@ Bienvenue sur la page d'acceuil de l'Infrastructure du projet Gestion-déchèter
 - ...
 
 ## Démonstration en production
-- [https://gestion-decheterie.internet-box.ch](https://gestion-decheterie.internet-box.ch/employes)
+- [https://gestion-decheterie.internet-box.ch](https://gestion-decheterie.internet-box.ch)
