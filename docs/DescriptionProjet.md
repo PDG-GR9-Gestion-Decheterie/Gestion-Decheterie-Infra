@@ -36,9 +36,9 @@
 
 ### 1.1. Objectifs
 
-L'objectif de ce projet est de créer un système de base de données dédié à la gestion des déchèteries de Suisse.
+L'objectif de ce projet est de créer une application web avec une base de données dédié à la gestion des déchèteries de Suisse.
 
-Le but principal est de fournir un outil qui simplifiera la gestion des déchèteries nationales. Cette base de données permettra un suivi précis des informations essentielles.
+Le but principal est de fournir un outil qui simplifiera la gestion des déchèteries nationales. Cette base de données permettra un suivi précis des informations essentielles, notament par exemple les ramassages, les employés, ...
 
 Le projet vise à accroître l'efficacité opérationnelle des déchèteries en offrant un système centralisé pour la gestion du personnel, des équipements, et des flux de déchets. Il contribuera ainsi à une meilleure organisation des activités de collecte et de gestion des déchets, tout en facilitant la traçabilité.
 
@@ -52,7 +52,7 @@ Chaque déchèterie possède des contenants, des employés, une adresse et des r
 - Une adresse est décrite par une rue et numéro, un code postal, une ville et un pays
 - Il y a comme fonction : Responsable, Secrétaire, Chauffeur, Employé.
 
-Une déchèterie principale en plus d’avoir les mêmes attributs qu’une déchèterie possède des moyens de transport des déchets (véhicules).
+Une déchèterie peut posséder des moyens de transport des déchets (véhicules).
 
 Les contenants sont soit des bennes, des palettes, des grandes caisses ou des big bag et possède un type de déchets contenu.
 
@@ -87,7 +87,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 | Rôle            | Tables           | Lecture                            | Ajout                               | Modification                       | Suppression                        |
 |-----------------|------------------|------------------------------------|-------------------------------------|------------------------------------|------------------------------------|
 | **Employé + Chauffeur** | Ramassages       | ✅ Présents et futurs      | ✅                                 | ❌                                 | ❌                                 |
-|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Contenants       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
@@ -96,7 +96,7 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 |                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 | **Secrétaire**  | Ramassages       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
-|                 | Employé          | ✅ Ses propres infos               | ❌                                 | ❌                                 | ❌                                 |
+|                 | Employé          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Véhicules        | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Contenants       | ✅                                 | ✅                                 | ✅                                 | ✅                                 |
 |                 | Déchèterie       | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
@@ -114,13 +114,13 @@ Chaque type de déchets est associé à un contenant en fonction de la manière 
 |                 | Fonctions        | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 |                 | Déchets          | ✅                                 | ❌                                 | ❌                                 | ❌                                 |
 
-- Un secrétaire, un chauffeur ou un responsable ne peut que travailler pour une déchèterie principale.
+
 - Toutes les informations doivent être uniquement disponible pour les employé de la même déchèterie principale. Par exemple il est impossible de voir les ramassage d'une autre déchèterie principale.
 
 #### 1.2.3. Besoins fonctionnels - Connexion
 
 - Une page de connexion permet à l'utilisateur de se connecter avec un nom d'utilisateur et un mot de passe.
-- Un employé peut modifier son mot de passe.
+- On peut modifier le mote de passe via un Responsable.
 
 #### 1.2.4. Exigences non-fonctionnelles
 
@@ -153,7 +153,7 @@ La base de données est une base de données **PostgreSQL** avec un script d'ini
 
 ### 2.4. Reverse proxy
 
-Le reverse proxy utilise **Traefik** et permet au backend et au frontend d'être accessibles via le même port tout en répartissant les différentes requêtes au bon conteneur.
+Le reverse proxy utilise **Traefik** et permet au backend et au frontend d'être accessibles via la même url et le même port tout en répartissant les différentes requêtes au bon conteneur.
 
 ### 2.5. Environnement de déploiement
 
