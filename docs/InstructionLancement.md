@@ -8,6 +8,10 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 Assurez-vous également d'avoir une clé Google API pour le service Google Map. Si vous n'avez pas de clé, vous pouvez en créer une en suivant ce [lien](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=fr) ou la demander à un membre du groupe.
 
+## Dépannage
+
+Si une erreur survient sur le backend lors du lancement de l'application, il suffit de faire un `docker compose stop` et de relancer les conteneurs comme indiqué.
+
 ## Lancer l'application en local
 
 ### 1. Télécharger les releases des trois dépôts Git
