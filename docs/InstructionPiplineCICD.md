@@ -8,12 +8,12 @@ Ce guide vous explique comment apporter une modification au code et l'amener en 
 Le processus de contribution est le même que celui décrit dans le guide [ContributionProjetWorkflow](ContributionProjetWorkflow.md).
 
 ### Étape 2 : Tester le code
-Lors de chaque push, les tests d'intégration du backend avec la base de données sont exécutés automatiquement. Assurez-vous que vos modifications passent ces tests avant de créer une *pull request*. Si les tests doivent être mis à jour, vous pouvez les trouver dans le dossier `tests` du backend.
+Lors de chaque pull request, les tests d'intégration du backend sont exécutés automatiquement. Assurez-vous que vos modifications dans le backend passent ces tests. Si les tests doivent être mis à jour, vous pouvez les trouver dans le dossier `tests` du backend.
 
 ### Étape 4 : Créer une Pull Request
 - Accédez à votre dépôt sur GitHub.
-- Créez une pull request pour fusionner votre branche ?  `ma-nouvelle-fonctionnalite` dans `main`.
-- Demandez à un collègue de réviser votre *pull request*.
+- Créez une pull request pour fusionner votre branche : `ma-branche` dans `main`.
+- Demandez à un membre de l'organisation de réviser votre *pull request*.
 
 ### Étape 5 : Revue et Fusion de la Pull Request
 Une fois que votre *pull request* est approuvée, elle peut être fusionnée dans la branche `main`. Cette action déclenchera automatiquement le pipeline CI/CD.
@@ -30,9 +30,9 @@ Les serveurs de production peuvent maintenant récupérer la nouvelle image Dock
     
 ```bash
 docker compose pull
-docker compose up -d
+docker compose up --build -d
 ```
-Votre modification est maintenant en production et disponible pour les utilisateurs.
+Vos modifications sont maintenant en production et disponibles pour les utilisateurs.
 
 ## Schéma du Pipeline CI/CD
 ![Pipeline CI/CD](img/workflow.png)

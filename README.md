@@ -13,3 +13,12 @@ Bienvenue sur la page d'acceuil de l'Infrastructure du projet Gestion-déchèter
 - [Comment contribuer](./docs/ContributionProjetWorkflow.md)
 - [Pipeline CI/CD](./docs/InstructionPiplineCICD.md)
 - [Comment lancer le projet](./docs/InstructionLancement.md)
+
+## Landing Page
+- [PDG-GR9-Gestion-Decheterie.github.io](https://PDG-GR9-Gestion-Decheterie.github.io)
+
+## Vidéo de présentation
+- [https://www.youtube.com/watch?v=4FmYdAKN7wg](https://www.youtube.com/watch?v=4FmYdAKN7wg)
+
+## Démonstration en production
+- [https://gestion-decheterie.internet-box.ch](https://gestion-decheterie.internet-box.ch)

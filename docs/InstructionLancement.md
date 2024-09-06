@@ -1,4 +1,4 @@
-# Mode d'emploi pour lancer le projet en local
+# Instructions de lancement
 
 ## Prérequis
 
@@ -6,21 +6,23 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-## Étapes pour lancer le projet
+Assurez-vous également d'avoir une clé Google API pour le service Google Map. Si vous n'avez pas de clé, vous pouvez en créer une en suivant ce [lien](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=fr) ou la demander à un membre du groupe.
 
-Vous devez récupérer les releases des trois dépôts Git suivants et les extraire dans le même dossier pour des raisons de chemin d'accès :
+## Dépannage
 
-1. **Télécharger les releases**
+Si une erreur survient sur le backend lors du lancement de l'application, il suffit de faire un `docker compose stop` et de relancer les conteneurs comme indiqué.
 
-   Téléchargez les releases des trois dépôts Git suivants :
+## Lancer l'application en local
 
-   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases)
-   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases)
-   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases)
+### 1. Télécharger les releases des trois dépôts Git
 
-2. **Extraire les releases**
+   - [Gestion-Decheterie-Infra](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases/latest)
+   - [Gestion-Decheterie-Backend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Backend/releases/latest)
+   - [Gestion-Decheterie-Frontend](https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Frontend/releases/latest)
 
-   Extrayez les archives téléchargées dans le même dossier parent. Par exemple :
+### 2. Extraire les releases
+
+   Extrayez les archives téléchargées dans un même dossier. Par exemple :
 
    ```bash
     /votre-dossier-projet
@@ -42,17 +44,20 @@ Vous devez récupérer les releases des trois dépôts Git suivants et les extra
     └── Gestion-Decheterie-Frontend
    ```
 
-3. **Lancer le projet en local**
-Pour lancer le projet en local, suivez les étapes ci-dessous :
-- Mettre la clé Google API pour le service Google Map dans le fichier [`Gestion-Decheterie-Infra/dev/.env`](../dev/.env). Si vous n'avez pas de clé, vous pouvez en créer en suivant ce [lien](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=fr) :
+### 3. Lancer le projet
+
+Mettez la clé Google API pour le service Google Map dans le fichier [`Gestion-Decheterie-Infra/dev/.env`](../dev/.env) :
 ```bash
 REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 ```
-- Accédez au dossier `Gestion-Decheterie-Infra/dev` :
+Accédez au dossier `Gestion-Decheterie-Infra/dev` :
 ```bash
 cd Gestion-Decheterie-Infra/dev
 ```
-- Exécutez la commande suivante pour construire et démarrer les conteneurs Docker :
+
+> **Note :** Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement localhost. Les images Docker sont construites en local. Les certificats SSL sont auto-signés c'est pourquoi nous avons un warning de sécurité dans le navigateur.
+
+Exécutez la commande suivante pour construire et démarrer les conteneurs Docker :
 ```bash
 docker compose up --build
 ```
@@ -62,7 +67,7 @@ Cette commande va automatiquement :
 - Créer le schéma de la base de données
 - Remplir la DB avec les données de test
 
-4. **Accéder à l'application**
+### 4. Accéder à l'application
 Une fois le lancement terminé, vous pouvez accéder à l'application en ouvrant un navigateur et en allant à l'URL suivante : [https://localhost](https://localhost).
 
 Vous devriez maintenant voir l'application en cours d'exécution.
@@ -76,29 +81,75 @@ Vous devriez maintenant voir l'application en cours d'exécution.
 | rsmith2   |   123    |   Chauffeur   |
 
 
-### Documentation
+### Documentation des endpoints de l'API
 Nous avons mis en place une documentation interactive avec Swagger pour notre API. Pour y accéder, il suffit d'ajouter `/api-docs` à l'URL de votre application. Par exemple, si votre application est en cours d'exécution sur `https://localhost`, vous pouvez accéder à la documentation Swagger en allant à l'URL suivante :
 https://localhost/api-docs
 Cette documentation vous permet de visualiser et de tester les différentes routes de l'API de manière interactive.
 
-## Autres
-### Explication du fonctionnement dans `Infra`
+## Lancer l'application en production
+Ces instructions sont faites pour lancer l'application en production sur un serveur linux.
 
-Le dossier `Gestion-Decheterie-Infra` contient plusieurs sous-dossiers importants pour la gestion de l'infrastructure :
+### 1. Télécharger la release de l'infrastructure et les fichiers nécessaires
 
-- **dev** : Ce dossier contient une configuration qui permet de monter notre infrastructure dans Docker avec des données de test et des variables d'environnement spécifiques à l'environnement de développement localhost. Les images Docker sont construites en local. Les certificats SSL sont auto-signés c'est pourquoi nous avons un warning de sécurité dans le navigateur.
+```bash
+curl -L -o release-asset.tar.gz https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/archive/refs/tags/V1.0.tar.gz
+```
 
-- **release** : Ce dossier est utilisé pour lancer la version de production sur notre serveur. La principale différence réside dans les variables d'environnement, les données insérées dans la base de données, et les certificats SSL (qui sont obtenu par le reverse proxy) pour le protocole HTTPS. Dans cette version, les images Docker sont récupérées depuis Docker Hub. Pour la lancer sur vos serveurs de production il faut modifier les variables d'environnement dans les fichier:
-- `release/.env`
-- `release/docker-compose.yaml`
-- `release/traefik/traefik.yaml`  
-Et exécuter la commande suivante sur le serveur  dans le dossier `Gestion-Decheterie-Infra/release` :
-   ```bash
-   docker compose up --build
-   ```
-   Identifiant et mot de passe pour accéder à l'application :
+```bash
+curl -L -o source.csv https://github.com/PDG-GR9-Gestion-Decheterie/Gestion-Decheterie-Infra/releases/download/V1.0/source.csv
+```
+
+### 2. Extraire les fichiers
+
+```bash
+tar -xzf release-asset.tar.gz
+```
+
+```bash
+rm -rf release-asset.tar.gz
+```
+
+```bash
+mv source.csv Gestion-Decheterie-Infra-1.0/dataAdresse/
+```
+
+```bash
+cd Gestion-Decheterie-Infra-1.0/release/
+```
+
+### 3. Configurer les paramètres de l'application
+
+```bash
+nano .env # Ajoutez votre clé Google API et adaptez les autres paramètres
+```
+   
+```bash
+chmod 600 traefik/acme.json
+```
+
+### 4. Lancer l'application
+
+```bash
+sudo docker compose pull
+
+sudo docker compose up --build -d
+```
+
+Vous devriez maintenant voir l'application en cours d'exécution sur votre serveur.
+
+> **Note :** L'application a été configurée pour être accessible via l'url `https://gestion-decheterie.internet-box.ch`. Vous pouvez modifier cette configuration en modifiant les fichiers de configuration suivants :
+> - [`Gestion-Decheterie-Infra/release/.env`](../release/.env)
+> - [`Gestion-Decheterie-Infra/release/docker-compose.yaml`](../release/docker-compose.yaml)
+
+> **Note :** Si vous souhaitez obtenir des emails concerants les certificats SSL, vous devez modifier le fichier de configuration suivant pour renseigner votre adresse email :
+> - [`Gestion-Decheterie-Infra/release/traefik/traefik.yml`](../release/traefik/traefik.yaml)
+
+## Démonstration
+
+Une démonstration de l'application en production est disponible à l'adresse suivante : 
+
+[https://gestion-decheterie.internet-box.ch/](https://gestion-decheterie.internet-box.ch/)
+
+Vous pouvez vous y connecter avec les identifiants suivants :
    - Identifiant : `admin`
    - Mot de passe : `jesuisicietpasla`
-
-- **test** : Ce dossier contient des données de test utilisées pour les tests unitaires du backend lancés dans github actions.
-
